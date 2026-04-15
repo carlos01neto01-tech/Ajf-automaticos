@@ -5,275 +5,556 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AJF Automáticos | Câmbio Automático em Maringá</title>
   <meta name="description" content="Especialistas em câmbio automático automotiva em Maringá e região." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet" />
 
   <style>
+    :root{
+      --neon:#18f000;
+      --neon-dark:#0fcf00;
+      --text:#ffffff;
+      --header-bg:rgba(20,34,37,.58);
+      --line:rgba(255,255,255,.42);
+      --card-bg:rgba(0,0,0,.68);
+      --container:1520px;
+      --header-h:114px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Teko", sans-serif;
+      background:#000;
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a, button{
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .container{
+      width:min(calc(100% - 64px), var(--container));
+      margin:0 auto;
+    }
+
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:1000;
+      background:var(--header-bg);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
     .header-inner{
-      width:min(100% - 48px, 1460px) !important;
-      min-height:98px !important;
-      gap:20px !important;
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+    }
+
+    .brand{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      text-decoration:none;
     }
 
     .brand-logo{
-      width:78px !important;
-      height:auto !important;
-      object-fit:contain !important;
-      display:block !important;
+      width:108px;
+      height:auto;
+      object-fit:contain;
     }
 
     .desktop-nav{
-      gap:42px !important;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:46px;
+      flex:1 1 auto;
+    }
+
+    .desktop-nav a,
+    .mobile-nav a{
+      text-decoration:none;
+      color:rgba(255,255,255,.9);
+      font-size:2.15rem;
+      line-height:1;
+      transition:.25s ease;
+    }
+
+    .desktop-nav a.active,
+    .desktop-nav a:hover,
+    .mobile-nav a:hover{
+      color:var(--neon);
+      text-shadow:0 0 14px rgba(24,240,0,.35);
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex:0 0 auto;
+    }
+
+    .contact-button{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      text-decoration:none;
+      color:#041404;
+      border-radius:999px;
+      border:3px solid rgba(255,255,255,.72);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 100%),
+        linear-gradient(135deg, #1cff00 0%, #12ec00 48%, #0ecf00 100%);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.24),
+        0 0 0 1px rgba(24,240,0,.28),
+        0 10px 24px rgba(0,0,0,.26),
+        0 0 22px rgba(24,240,0,.22);
+      overflow:hidden;
+      transition:transform .18s ease, box-shadow .24s ease;
+      white-space:nowrap;
+    }
+
+    .contact-button::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 22%, rgba(255,255,255,.26) 46%, transparent 68%);
+      transform:translateX(-135%);
+      transition:transform .65s ease;
+    }
+
+    .contact-button:hover::before,
+    .contact-button:focus-visible::before{
+      transform:translateX(145%);
+    }
+
+    .contact-button:hover,
+    .contact-button:focus-visible{
+      transform:translateY(-2px) scale(1.01);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.3),
+        0 14px 32px rgba(0,0,0,.34),
+        0 0 28px rgba(24,240,0,.38);
+    }
+
+    .contact-button:active{
+      transform:scale(.97);
+      box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.18),
+        0 8px 18px rgba(0,0,0,.22),
+        0 0 22px rgba(24,240,0,.42);
+    }
+
+    .contact-button span,
+    .contact-button img{
+      position:relative;
+      z-index:1;
     }
 
     .header-cta{
-      min-width:305px !important;
-      min-height:70px !important;
-      padding:0 30px !important;
-      font-size:1.9rem !important;
+      min-width:330px;
+      min-height:72px;
+      padding:0 34px;
+      font-size:2rem;
     }
 
     .whatsapp-icon{
-      width:28px !important;
-      height:28px !important;
+      width:30px;
+      height:30px;
+      object-fit:contain;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+      padding:0;
+    }
+
+    .menu-toggle span{
+      width:30px;
+      height:4px;
+      border-radius:999px;
+      background:#fff;
+      display:block;
+      transition:.25s ease;
+    }
+
+    .mobile-menu{
+      display:none;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:100svh;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-bg,
+    .hero-bg img,
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .hero-bg img{
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      z-index:-1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.12) 42%, rgba(0,0,0,.38) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.20) 0%, rgba(0,0,0,.02) 48%, rgba(0,0,0,.10) 100%);
     }
 
     .hero-content{
-      width:min(100% - 48px, 1460px) !important;
-      min-height:calc(100vh - 98px) !important;
-      padding-top:118px !important;
-      padding-bottom:30px !important;
-      display:flex !important;
-      align-items:flex-start !important;
-      justify-content:flex-start !important;
+      position:relative;
+      z-index:2;
+      min-height:100svh;
+      padding-top:calc(var(--header-h) + 28px);
+      padding-bottom:24px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:flex-start;
     }
 
     .hero-card{
-      width:850px !important;
-      min-height:610px !important;
-      margin-left:8px !important;
-      margin-top:46px !important;
-      padding:78px 46px 54px !important;
-      border-radius:30px !important;
-      display:flex !important;
-      flex-direction:column !important;
-      justify-content:flex-start !important;
+      width:min(57vw, 850px);
+      min-height:640px;
+      margin-left:8px;
+      margin-top:72px;
+      padding:78px 46px 54px;
+      border-radius:30px;
+      border:2px solid rgba(24,240,0,.92);
+      background:linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.80));
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:
+        inset 0 0 80px rgba(0,0,0,.2),
+        0 0 0 1px rgba(24,240,0,.12),
+        0 0 28px rgba(24,240,0,.12);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
     }
 
-    .hero-title-desktop,
-    .hero-title-mobile{
-      margin:0 !important;
-      text-transform:uppercase !important;
-      font-family:"Teko", sans-serif !important;
-      font-weight:600 !important;
-      line-height:0.93 !important;
-      letter-spacing:0 !important;
+    .hero-title{
+      font-weight:600;
+      text-transform:uppercase;
+      line-height:.93;
+      letter-spacing:0;
+      margin:0;
+    }
+
+    .hero-title .green{
+      color:var(--neon);
+      text-shadow:0 0 16px rgba(24,240,0,.2);
     }
 
     .hero-title-desktop{
-      display:block !important;
-      font-size:50px !important;
-      max-width:700px !important;
+      display:block;
+      font-size:50px;
+      max-width:700px;
     }
 
     .hero-title-mobile{
-      display:none !important;
-    }
-
-    .hero-title-desktop .green,
-    .hero-title-mobile .green{
-      color:#19f000 !important;
+      display:none;
     }
 
     .hero-cta{
-      margin-top:64px !important;
-      width:695px !important;
-      min-height:124px !important;
-      font-size:3.2rem !important;
-      padding:0 24px !important;
-      align-self:flex-start !important;
+      margin-top:64px;
+      width:min(100%, 695px);
+      min-height:124px;
+      padding:0 24px;
+      font-size:3.2rem;
+      align-self:flex-start;
     }
 
-    @media (max-width: 991px){
-      .header-inner{
-        width:min(100% - 26px, 100%) !important;
-        min-height:86px !important;
+    .spacer-section{
+      height:1px;
+    }
+
+    /* NOTEBOOK / TABLET */
+    @media (max-width: 1366px){
+      :root{
+        --header-h:108px;
+      }
+
+      .container{
+        width:min(calc(100% - 48px), var(--container));
       }
 
       .brand-logo{
-        width:58px !important;
+        width:92px;
+      }
+
+      .desktop-nav{
+        gap:34px;
+      }
+
+      .desktop-nav a{
+        font-size:1.95rem;
       }
 
       .header-cta{
-        min-width:228px !important;
-        min-height:56px !important;
-        padding:0 18px !important;
-        font-size:1.35rem !important;
-      }
-
-      .hero-content{
-        width:min(100% - 26px, 100%) !important;
-        min-height:auto !important;
-        padding-top:108px !important;
-        padding-bottom:20px !important;
-        justify-content:center !important;
+        min-width:305px;
+        min-height:68px;
+        font-size:1.85rem;
       }
 
       .hero-card{
-        width:min(100%, 760px) !important;
-        min-height:auto !important;
-        margin-left:0 !important;
-        margin-top:22px !important;
-        padding:46px 28px 34px !important;
+        width:min(60vw, 820px);
+        min-height:610px;
+        margin-top:62px;
+        padding:70px 42px 48px;
       }
 
       .hero-title-desktop{
-        font-size:38px !important;
-        max-width:100% !important;
+        font-size:46px;
+        max-width:650px;
       }
 
       .hero-cta{
-        width:min(100%, 520px) !important;
-        min-height:88px !important;
-        font-size:2.2rem !important;
-        margin-top:32px !important;
+        width:min(100%, 640px);
+        min-height:114px;
+        font-size:2.95rem;
       }
     }
 
-    @media (max-width: 767px){
+    /* MOBILE / TABLET */
+    @media (max-width: 991px){
+      :root{
+        --header-h:92px;
+      }
+
+      .container{
+        width:min(calc(100% - 26px), var(--container));
+      }
+
+      .site-header{
+        border-bottom:1px solid rgba(255,255,255,.34);
+      }
+
       .header-inner{
-        width:calc(100% - 22px) !important;
-        min-height:82px !important;
-        gap:10px !important;
+        min-height:var(--header-h);
+        gap:10px;
       }
 
       .brand-logo{
-        width:54px !important;
+        width:54px;
+      }
+
+      .desktop-nav{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:inline-flex;
+      }
+
+      .header-actions{
+        gap:12px;
       }
 
       .header-cta{
-        min-width:208px !important;
-        min-height:52px !important;
-        padding:0 18px !important;
-        font-size:1.2rem !important;
+        width:235px;
+        min-width:235px;
+        min-height:54px;
+        padding:0 18px;
+        font-size:1.15rem;
+        gap:12px;
       }
 
       .whatsapp-icon{
-        width:22px !important;
-        height:22px !important;
+        width:22px;
+        height:22px;
+      }
+
+      .menu-toggle{
+        width:42px;
+        height:42px;
+      }
+
+      .menu-toggle span{
+        width:28px;
+        height:3px;
+      }
+
+      .mobile-menu{
+        display:block;
+        max-height:0;
+        overflow:hidden;
+        background:rgba(7,16,18,.95);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+        transition:max-height .3s ease;
+      }
+
+      .mobile-menu.open{
+        max-height:320px;
+      }
+
+      .mobile-nav{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+        padding:0 20px 20px;
+      }
+
+      .mobile-nav a{
+        font-size:1.9rem;
+        padding:8px 0;
+      }
+
+      .hero{
+        min-height:100svh;
+      }
+
+      .hero-bg img{
+        object-position:center top;
       }
 
       .hero-content{
-        width:calc(100% - 22px) !important;
-        padding-top:108px !important;
-        padding-bottom:16px !important;
-        justify-content:center !important;
-        align-items:flex-start !important;
+        min-height:auto;
+        padding-top:calc(var(--header-h) + 16px);
+        padding-bottom:16px;
+        justify-content:center;
+        align-items:flex-start;
       }
 
       .hero-card{
-        width:min(100%, 780px) !important;
-        min-height:705px !important;
-        margin:22px auto 0 !important;
-        padding:48px 28px 34px !important;
-        border-radius:24px !important;
+        width:100%;
+        min-height:815px;
+        margin:14px auto 0;
+        padding:48px 30px 34px;
+        border-radius:26px;
       }
 
       .hero-title-desktop{
-        display:none !important;
+        display:none;
       }
 
       .hero-title-mobile{
-        display:block !important;
-        font-size:30px !important;
-        max-width:100% !important;
+        display:block;
+        font-size:30px;
+        line-height:.95;
+        max-width:290px;
       }
 
       .hero-cta{
-        width:100% !important;
-        min-height:82px !important;
-        margin-top:42px !important;
-        font-size:1.7rem !important;
-        padding:0 16px !important;
+        width:100%;
+        min-height:84px;
+        margin-top:54px;
+        padding:0 16px;
+        font-size:1.68rem;
+        align-self:stretch;
+      }
+    }
+
+    @media (max-width: 479px){
+      .container{
+        width:calc(100% - 24px);
+      }
+
+      .brand-logo{
+        width:52px;
+      }
+
+      .header-actions{
+        gap:10px;
+      }
+
+      .header-cta{
+        width:228px;
+        min-width:228px;
+        min-height:52px;
+        padding:0 16px;
+        font-size:1.08rem;
+      }
+
+      .whatsapp-icon{
+        width:21px;
+        height:21px;
+      }
+
+      .hero-card{
+        min-height:810px;
+        padding:46px 28px 32px;
+      }
+
+      .hero-title-mobile{
+        font-size:29px;
+        max-width:274px;
+      }
+
+      .hero-cta{
+        min-height:80px;
+        margin-top:52px;
+        font-size:1.55rem;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header" id="topo">
-    <div
-      class="header-inner"
-      style="
-        width:min(100% - 48px, 1460px);
-        margin:0 auto;
-        min-height:98px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:20px;
-      "
-    >
-      <a
-        href="#topo"
-        class="brand"
-        aria-label="AJF Automáticos - Início"
-        style="display:flex; align-items:center; flex:0 0 auto;"
-      >
-        <img
-          src="assets/logo.webp"
-          alt="Logo AJF Automáticos"
-          class="brand-logo"
-          style="width:78px; height:auto; object-fit:contain; display:block;"
-        />
+    <div class="container header-inner">
+      <a href="#topo" class="brand" aria-label="AJF Automáticos - Início">
+        <img src="assets/logo.webp" alt="Logo AJF Automáticos" class="brand-logo" />
       </a>
 
-      <nav
-        class="desktop-nav"
-        aria-label="Menu principal"
-        style="
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          gap:42px;
-          flex:1 1 auto;
-          margin:0;
-        "
-      >
+      <nav class="desktop-nav" aria-label="Menu principal">
         <a href="#home" class="active">Home</a>
         <a href="#sobre">Sobre Nós</a>
         <a href="#servicos">Serviços</a>
         <a href="#cases">Cases de Sucesso</a>
       </nav>
 
-      <div
-        class="header-actions"
-        style="
-          display:flex;
-          align-items:center;
-          gap:16px;
-          flex:0 0 auto;
-        "
-      >
+      <div class="header-actions">
         <a
           href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o."
           class="contact-button header-cta"
           aria-label="Entrar em contato pelo WhatsApp"
-          style="
-            min-width:305px;
-            min-height:70px;
-            padding:0 30px;
-            font-size:1.9rem;
-          "
         >
           <span>Entra em Contato</span>
-          <img
-            src="assets/whatsapp-icon.webp"
-            alt="WhatsApp"
-            class="whatsapp-icon"
-            style="width:28px; height:28px;"
-          />
+          <img src="assets/whatsapp-icon.webp" alt="WhatsApp" class="whatsapp-icon" />
         </a>
 
         <button
@@ -282,6 +563,7 @@
           aria-label="Abrir menu"
           aria-expanded="false"
           aria-controls="mobileMenu"
+          type="button"
         >
           <span></span>
           <span></span>
@@ -309,42 +591,15 @@
 
       <div class="hero-overlay"></div>
 
-      <div
-        class="hero-content"
-        style="
-          width:min(100% - 48px, 1460px);
-          margin:0 auto;
-          min-height:calc(100vh - 98px);
-          padding-top:118px;
-          padding-bottom:30px;
-          position:relative;
-          z-index:2;
-          display:flex;
-          align-items:flex-start;
-          justify-content:flex-start;
-        "
-      >
-        <div
-          class="hero-card"
-          style="
-            width:850px;
-            min-height:610px;
-            margin-left:8px;
-            margin-top:46px;
-            padding:78px 46px 54px;
-            border-radius:30px;
-            display:flex;
-            flex-direction:column;
-            justify-content:flex-start;
-          "
-        >
-          <h1 class="hero-title-desktop">
+      <div class="container hero-content">
+        <div class="hero-card">
+          <h1 class="hero-title hero-title-desktop">
             ESPECIALISTAS EM <span class="green">CÂMBIO</span><br>
             <span class="green">AUTOMÁTICO</span> AUTOMOTIVA<br>
             EM MARINGÁ E REGIÃO!
           </h1>
 
-          <h1 class="hero-title-mobile">
+          <h1 class="hero-title hero-title-mobile">
             ESPECIALISTAS<br>
             EM <span class="green">CÂMBIO</span><br>
             <span class="green">AUTOMÁTICO</span><br>
@@ -357,14 +612,6 @@
             href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o."
             class="contact-button hero-cta"
             aria-label="Agendar revisão agora"
-            style="
-              margin-top:64px;
-              width:695px;
-              min-height:124px;
-              font-size:3.2rem;
-              padding:0 24px;
-              align-self:flex-start;
-            "
           >
             <span>AGENDA SUA REVISÃO AGORA</span>
           </a>
@@ -377,6 +624,24 @@
     <section id="cases" class="spacer-section" aria-hidden="true"></section>
   </main>
 
-  <script src="js/script.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
 </body>
 </html>
