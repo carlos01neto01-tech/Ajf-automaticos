@@ -13,11 +13,11 @@
   <style>
     :root{
       --neon:#18f000;
-      --neon-dark:#0fcf00;
+      --neon-dark:#0fd100;
       --text:#ffffff;
-      --header-bg:rgba(20,34,37,.58);
+      --header-bg:rgba(25,40,43,.58);
       --line:rgba(255,255,255,.42);
-      --card-bg:rgba(0,0,0,.68);
+      --card-bg:rgba(0,0,0,.70);
       --container:1520px;
       --header-h:114px;
     }
@@ -53,7 +53,6 @@
       margin:0 auto;
     }
 
-    /* HEADER */
     .site-header{
       position:fixed;
       inset:0 0 auto 0;
@@ -96,7 +95,7 @@
     .desktop-nav a,
     .mobile-nav a{
       text-decoration:none;
-      color:rgba(255,255,255,.9);
+      color:rgba(255,255,255,.90);
       font-size:2.15rem;
       line-height:1;
       transition:.25s ease;
@@ -123,12 +122,12 @@
       justify-content:center;
       gap:16px;
       text-decoration:none;
-      color:#041404;
+      color:#061406;
       border-radius:999px;
       border:3px solid rgba(255,255,255,.72);
       background:
-        linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 100%),
-        linear-gradient(135deg, #1cff00 0%, #12ec00 48%, #0ecf00 100%);
+        linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.04) 100%),
+        linear-gradient(135deg, #21ff00 0%, #12ea00 48%, #0ccc00 100%);
       box-shadow:
         inset 0 2px 0 rgba(255,255,255,.24),
         0 0 0 1px rgba(24,240,0,.28),
@@ -137,6 +136,7 @@
       overflow:hidden;
       transition:transform .18s ease, box-shadow .24s ease;
       white-space:nowrap;
+      font-weight:600;
     }
 
     .contact-button::before{
@@ -157,17 +157,13 @@
     .contact-button:focus-visible{
       transform:translateY(-2px) scale(1.01);
       box-shadow:
-        inset 0 2px 0 rgba(255,255,255,.3),
+        inset 0 2px 0 rgba(255,255,255,.30),
         0 14px 32px rgba(0,0,0,.34),
         0 0 28px rgba(24,240,0,.38);
     }
 
     .contact-button:active{
       transform:scale(.97);
-      box-shadow:
-        inset 0 2px 0 rgba(255,255,255,.18),
-        0 8px 18px rgba(0,0,0,.22),
-        0 0 22px rgba(24,240,0,.42);
     }
 
     .contact-button span,
@@ -209,14 +205,12 @@
       border-radius:999px;
       background:#fff;
       display:block;
-      transition:.25s ease;
     }
 
     .mobile-menu{
       display:none;
     }
 
-    /* HERO */
     .hero{
       position:relative;
       min-height:100svh;
@@ -241,15 +235,15 @@
     .hero-overlay{
       z-index:-1;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.12) 42%, rgba(0,0,0,.38) 100%),
-        linear-gradient(90deg, rgba(0,0,0,.20) 0%, rgba(0,0,0,.02) 48%, rgba(0,0,0,.10) 100%);
+        linear-gradient(180deg, rgba(0,0,0,.02) 0%, rgba(0,0,0,.10) 42%, rgba(0,0,0,.34) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.02) 48%, rgba(0,0,0,.10) 100%);
     }
 
     .hero-content{
       position:relative;
       z-index:2;
       min-height:100svh;
-      padding-top:calc(var(--header-h) + 28px);
+      padding-top:calc(var(--header-h) + 22px);
       padding-bottom:24px;
       display:flex;
       align-items:flex-start;
@@ -257,18 +251,18 @@
     }
 
     .hero-card{
-      width:min(57vw, 850px);
-      min-height:640px;
-      margin-left:8px;
-      margin-top:72px;
-      padding:78px 46px 54px;
-      border-radius:30px;
+      width:min(57vw, 860px);
+      min-height:545px;
+      margin-left:18px;
+      margin-top:28px;
+      padding:38px 40px 40px;
+      border-radius:32px;
       border:2px solid rgba(24,240,0,.92);
-      background:linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.80));
+      background:linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.82));
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
       box-shadow:
-        inset 0 0 80px rgba(0,0,0,.2),
+        inset 0 0 80px rgba(0,0,0,.18),
         0 0 0 1px rgba(24,240,0,.12),
         0 0 28px rgba(24,240,0,.12);
       display:flex;
@@ -276,12 +270,21 @@
       justify-content:flex-start;
     }
 
+    .hero-copy{
+      width:100%;
+      max-width:720px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:flex-start;
+    }
+
     .hero-title{
+      margin:0;
       font-weight:600;
       text-transform:uppercase;
-      line-height:.93;
+      line-height:.92;
       letter-spacing:0;
-      margin:0;
     }
 
     .hero-title .green{
@@ -291,8 +294,8 @@
 
     .hero-title-desktop{
       display:block;
-      font-size:50px;
-      max-width:700px;
+      font-size:64px;
+      max-width:720px;
     }
 
     .hero-title-mobile{
@@ -300,11 +303,11 @@
     }
 
     .hero-cta{
-      margin-top:64px;
-      width:min(100%, 695px);
-      min-height:124px;
-      padding:0 24px;
-      font-size:3.2rem;
+      margin-top:42px;
+      width:min(100%, 630px);
+      min-height:112px;
+      padding:0 26px;
+      font-size:2.95rem;
       align-self:flex-start;
     }
 
@@ -312,7 +315,6 @@
       height:1px;
     }
 
-    /* NOTEBOOK / TABLET */
     @media (max-width: 1366px){
       :root{
         --header-h:108px;
@@ -341,25 +343,24 @@
       }
 
       .hero-card{
-        width:min(60vw, 820px);
-        min-height:610px;
-        margin-top:62px;
-        padding:70px 42px 48px;
+        width:min(60vw, 830px);
+        min-height:520px;
+        margin-top:34px;
+        padding:34px 36px 36px;
       }
 
       .hero-title-desktop{
-        font-size:46px;
-        max-width:650px;
+        font-size:56px;
+        max-width:660px;
       }
 
       .hero-cta{
-        width:min(100%, 640px);
-        min-height:114px;
-        font-size:2.95rem;
+        width:min(100%, 600px);
+        min-height:104px;
+        font-size:2.7rem;
       }
     }
 
-    /* MOBILE / TABLET */
     @media (max-width: 991px){
       :root{
         --header-h:92px;
@@ -454,7 +455,7 @@
 
       .hero-content{
         min-height:auto;
-        padding-top:calc(var(--header-h) + 16px);
+        padding-top:calc(var(--header-h) + 140px);
         padding-bottom:16px;
         justify-content:center;
         align-items:flex-start;
@@ -462,10 +463,17 @@
 
       .hero-card{
         width:100%;
-        min-height:815px;
-        margin:14px auto 0;
-        padding:48px 30px 34px;
-        border-radius:26px;
+        min-height:700px;
+        margin:0 auto 0;
+        padding:54px 34px 34px;
+        border-radius:28px;
+      }
+
+      .hero-copy{
+        width:100%;
+        max-width:none;
+        align-items:center;
+        text-align:center;
       }
 
       .hero-title-desktop{
@@ -474,28 +482,30 @@
 
       .hero-title-mobile{
         display:block;
-        font-size:30px;
-        line-height:.95;
-        max-width:290px;
+        font-size:52px;
+        line-height:.92;
+        max-width:560px;
+        text-align:center;
       }
 
       .hero-cta{
         width:100%;
-        min-height:84px;
-        margin-top:54px;
-        padding:0 16px;
-        font-size:1.68rem;
-        align-self:stretch;
+        max-width:640px;
+        min-height:88px;
+        margin-top:48px;
+        padding:0 18px;
+        font-size:2rem;
+        align-self:center;
       }
     }
 
-    @media (max-width: 479px){
+    @media (max-width: 767px){
       .container{
         width:calc(100% - 24px);
       }
 
       .brand-logo{
-        width:52px;
+        width:50px;
       }
 
       .header-actions{
@@ -503,32 +513,136 @@
       }
 
       .header-cta{
-        width:228px;
-        min-width:228px;
-        min-height:52px;
-        padding:0 16px;
-        font-size:1.08rem;
+        width:270px;
+        min-width:270px;
+        min-height:58px;
+        padding:0 18px;
+        font-size:1.35rem;
       }
 
       .whatsapp-icon{
-        width:21px;
-        height:21px;
+        width:22px;
+        height:22px;
+      }
+
+      .hero-content{
+        padding-top:calc(var(--header-h) + 150px);
       }
 
       .hero-card{
-        min-height:810px;
-        padding:46px 28px 32px;
+        min-height:760px;
+        padding:58px 28px 34px;
       }
 
       .hero-title-mobile{
-        font-size:29px;
-        max-width:274px;
+        font-size:58px;
+        max-width:620px;
       }
 
       .hero-cta{
-        min-height:80px;
+        min-height:92px;
         margin-top:52px;
-        font-size:1.55rem;
+        font-size:2.15rem;
+      }
+    }
+
+    @media (max-width: 560px){
+      .header-cta{
+        width:230px;
+        min-width:230px;
+        min-height:52px;
+        font-size:1.12rem;
+        padding:0 16px;
+      }
+
+      .hero-content{
+        padding-top:calc(var(--header-h) + 165px);
+      }
+
+      .hero-card{
+        min-height:760px;
+        padding:54px 24px 32px;
+      }
+
+      .hero-title-mobile{
+        font-size:49px;
+        max-width:100%;
+      }
+
+      .hero-cta{
+        min-height:86px;
+        margin-top:48px;
+        font-size:1.82rem;
+      }
+    }
+
+    @media (max-width: 430px){
+      .container{
+        width:calc(100% - 22px);
+      }
+
+      .brand-logo{
+        width:46px;
+      }
+
+      .header-cta{
+        width:205px;
+        min-width:205px;
+        min-height:50px;
+        font-size:1rem;
+        gap:10px;
+      }
+
+      .whatsapp-icon{
+        width:20px;
+        height:20px;
+      }
+
+      .menu-toggle{
+        width:40px;
+        height:40px;
+      }
+
+      .hero-content{
+        padding-top:calc(var(--header-h) + 175px);
+      }
+
+      .hero-card{
+        min-height:720px;
+        padding:48px 20px 30px;
+        border-radius:26px;
+      }
+
+      .hero-title-mobile{
+        font-size:40px;
+        line-height:.92;
+      }
+
+      .hero-cta{
+        min-height:82px;
+        margin-top:44px;
+        font-size:1.62rem;
+        padding:0 14px;
+      }
+    }
+
+    @media (max-width: 390px){
+      .header-cta{
+        width:190px;
+        min-width:190px;
+        font-size:.92rem;
+      }
+
+      .hero-content{
+        padding-top:calc(var(--header-h) + 180px);
+      }
+
+      .hero-title-mobile{
+        font-size:36px;
+      }
+
+      .hero-cta{
+        font-size:1.46rem;
       }
     }
   </style>
@@ -593,28 +707,30 @@
 
       <div class="container hero-content">
         <div class="hero-card">
-          <h1 class="hero-title hero-title-desktop">
-            ESPECIALISTAS EM <span class="green">CÂMBIO</span><br>
-            <span class="green">AUTOMÁTICO</span> AUTOMOTIVA<br>
-            EM MARINGÁ E REGIÃO!
-          </h1>
+          <div class="hero-copy">
+            <h1 class="hero-title hero-title-desktop">
+              ESPECIALISTAS EM <span class="green">CÂMBIO</span><br>
+              <span class="green">AUTOMÁTICO</span> AUTOMOTIVA<br>
+              EM MARINGÁ E REGIÃO!
+            </h1>
 
-          <h1 class="hero-title hero-title-mobile">
-            ESPECIALISTAS<br>
-            EM <span class="green">CÂMBIO</span><br>
-            <span class="green">AUTOMÁTICO</span><br>
-            AUTOMOTIVA<br>
-            EM MARINGÁ E<br>
-            REGIÃO!
-          </h1>
+            <h1 class="hero-title hero-title-mobile">
+              ESPECIALISTAS<br>
+              EM <span class="green">CÂMBIO</span><br>
+              <span class="green">AUTOMÁTICO</span><br>
+              AUTOMOTIVA<br>
+              EM MARINGÁ E<br>
+              REGIÃO!
+            </h1>
 
-          <a
-            href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o."
-            class="contact-button hero-cta"
-            aria-label="Agendar revisão agora"
-          >
-            <span>AGENDA SUA REVISÃO AGORA</span>
-          </a>
+            <a
+              href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o."
+              class="contact-button hero-cta"
+              aria-label="Agendar revisão agora"
+            >
+              <span>AGENDA SUA REVISÃO AGORA</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
