@@ -12,14 +12,14 @@
 
   <style>
     :root{
-      --neon:#18f000;
-      --neon-dark:#0fd100;
+      --neon:#19f000;
+      --neon-dark:#0fd000;
       --text:#ffffff;
-      --header-bg:rgba(25,40,43,.58);
-      --line:rgba(255,255,255,.42);
+      --header-bg:rgba(30,47,49,.58);
+      --line:rgba(255,255,255,.40);
       --card-bg:rgba(0,0,0,.70);
       --container:1520px;
-      --header-h:114px;
+      --header-h:112px;
     }
 
     *{
@@ -44,7 +44,7 @@
       max-width:100%;
     }
 
-    a, button{
+    a,button{
       -webkit-tap-highlight-color:transparent;
     }
 
@@ -53,6 +53,7 @@
       margin:0 auto;
     }
 
+    /* HEADER */
     .site-header{
       position:fixed;
       inset:0 0 auto 0;
@@ -79,7 +80,7 @@
     }
 
     .brand-logo{
-      width:108px;
+      width:104px;
       height:auto;
       object-fit:contain;
     }
@@ -95,7 +96,7 @@
     .desktop-nav a,
     .mobile-nav a{
       text-decoration:none;
-      color:rgba(255,255,255,.90);
+      color:rgba(255,255,255,.92);
       font-size:2.15rem;
       line-height:1;
       transition:.25s ease;
@@ -105,7 +106,7 @@
     .desktop-nav a:hover,
     .mobile-nav a:hover{
       color:var(--neon);
-      text-shadow:0 0 14px rgba(24,240,0,.35);
+      text-shadow:0 0 14px rgba(25,240,0,.35);
     }
 
     .header-actions{
@@ -120,19 +121,19 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:16px;
+      gap:14px;
       text-decoration:none;
       color:#061406;
       border-radius:999px;
       border:3px solid rgba(255,255,255,.72);
       background:
         linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.04) 100%),
-        linear-gradient(135deg, #21ff00 0%, #12ea00 48%, #0ccc00 100%);
+        linear-gradient(135deg, #23ff00 0%, #13ea00 50%, #0ccd00 100%);
       box-shadow:
         inset 0 2px 0 rgba(255,255,255,.24),
-        0 0 0 1px rgba(24,240,0,.28),
+        0 0 0 1px rgba(25,240,0,.28),
         0 10px 24px rgba(0,0,0,.26),
-        0 0 22px rgba(24,240,0,.22);
+        0 0 22px rgba(25,240,0,.22);
       overflow:hidden;
       transition:transform .18s ease, box-shadow .24s ease;
       white-space:nowrap;
@@ -159,7 +160,7 @@
       box-shadow:
         inset 0 2px 0 rgba(255,255,255,.30),
         0 14px 32px rgba(0,0,0,.34),
-        0 0 28px rgba(24,240,0,.38);
+        0 0 28px rgba(25,240,0,.38);
     }
 
     .contact-button:active{
@@ -174,14 +175,14 @@
 
     .header-cta{
       min-width:330px;
-      min-height:72px;
+      min-height:70px;
       padding:0 34px;
       font-size:2rem;
     }
 
     .whatsapp-icon{
-      width:30px;
-      height:30px;
+      width:28px;
+      height:28px;
       object-fit:contain;
     }
 
@@ -211,6 +212,7 @@
       display:none;
     }
 
+    /* HERO */
     .hero{
       position:relative;
       min-height:100svh;
@@ -235,7 +237,7 @@
     .hero-overlay{
       z-index:-1;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.02) 0%, rgba(0,0,0,.10) 42%, rgba(0,0,0,.34) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.03) 0%, rgba(0,0,0,.10) 45%, rgba(0,0,0,.34) 100%),
         linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.02) 48%, rgba(0,0,0,.10) 100%);
     }
 
@@ -243,40 +245,41 @@
       position:relative;
       z-index:2;
       min-height:100svh;
-      padding-top:calc(var(--header-h) + 22px);
+      padding-top:var(--header-h);
       padding-bottom:24px;
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       justify-content:flex-start;
     }
 
     .hero-card{
-      width:min(57vw, 860px);
-      min-height:545px;
-      margin-left:18px;
-      margin-top:28px;
-      padding:38px 40px 40px;
+      width:min(56vw, 820px);
+      min-height:475px;
+      margin-left:26px;
+      margin-top:54px;
+      padding:42px 42px;
       border-radius:32px;
-      border:2px solid rgba(24,240,0,.92);
-      background:linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.82));
+      border:2px solid rgba(25,240,0,.92);
+      background:linear-gradient(180deg, rgba(0,0,0,.70), rgba(0,0,0,.80));
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
       box-shadow:
-        inset 0 0 80px rgba(0,0,0,.18),
-        0 0 0 1px rgba(24,240,0,.12),
-        0 0 28px rgba(24,240,0,.12);
+        inset 0 0 80px rgba(0,0,0,.16),
+        0 0 0 1px rgba(25,240,0,.12),
+        0 0 28px rgba(25,240,0,.12);
       display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
+      align-items:center;
+      justify-content:center;
     }
 
     .hero-copy{
       width:100%;
-      max-width:720px;
+      max-width:670px;
       display:flex;
       flex-direction:column;
-      justify-content:flex-start;
-      align-items:flex-start;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
     }
 
     .hero-title{
@@ -289,13 +292,13 @@
 
     .hero-title .green{
       color:var(--neon);
-      text-shadow:0 0 16px rgba(24,240,0,.2);
+      text-shadow:0 0 16px rgba(25,240,0,.20);
     }
 
     .hero-title-desktop{
       display:block;
-      font-size:64px;
-      max-width:720px;
+      font-size:60px;
+      max-width:670px;
     }
 
     .hero-title-mobile{
@@ -303,12 +306,12 @@
     }
 
     .hero-cta{
-      margin-top:42px;
-      width:min(100%, 630px);
-      min-height:112px;
-      padding:0 26px;
-      font-size:2.95rem;
-      align-self:flex-start;
+      margin-top:40px;
+      width:min(100%, 560px);
+      min-height:104px;
+      padding:0 24px;
+      font-size:2.7rem;
+      align-self:center;
     }
 
     .spacer-section{
@@ -317,7 +320,7 @@
 
     @media (max-width: 1366px){
       :root{
-        --header-h:108px;
+        --header-h:106px;
       }
 
       .container{
@@ -325,7 +328,7 @@
       }
 
       .brand-logo{
-        width:92px;
+        width:90px;
       }
 
       .desktop-nav{
@@ -337,33 +340,33 @@
       }
 
       .header-cta{
-        min-width:305px;
-        min-height:68px;
-        font-size:1.85rem;
+        min-width:300px;
+        min-height:66px;
+        font-size:1.82rem;
       }
 
       .hero-card{
-        width:min(60vw, 830px);
-        min-height:520px;
-        margin-top:34px;
-        padding:34px 36px 36px;
+        width:min(58vw, 780px);
+        min-height:445px;
+        margin-top:44px;
+        padding:38px 34px;
       }
 
       .hero-title-desktop{
-        font-size:56px;
-        max-width:660px;
+        font-size:54px;
+        max-width:630px;
       }
 
       .hero-cta{
-        width:min(100%, 600px);
-        min-height:104px;
-        font-size:2.7rem;
+        width:min(100%, 530px);
+        min-height:96px;
+        font-size:2.45rem;
       }
     }
 
     @media (max-width: 991px){
       :root{
-        --header-h:92px;
+        --header-h:94px;
       }
 
       .container{
@@ -376,31 +379,35 @@
 
       .header-inner{
         min-height:var(--header-h);
-        gap:10px;
+        gap:8px;
+        display:grid;
+        grid-template-columns:56px 1fr 42px;
+        align-items:center;
+      }
+
+      .brand{
+        justify-self:start;
       }
 
       .brand-logo{
-        width:54px;
+        width:48px;
       }
 
       .desktop-nav{
         display:none;
       }
 
-      .menu-toggle{
-        display:inline-flex;
-      }
-
       .header-actions{
-        gap:12px;
+        display:contents;
       }
 
       .header-cta{
-        width:235px;
-        min-width:235px;
-        min-height:54px;
+        justify-self:center;
+        width:265px;
+        min-width:265px;
+        min-height:56px;
         padding:0 18px;
-        font-size:1.15rem;
+        font-size:1.28rem;
         gap:12px;
       }
 
@@ -410,6 +417,8 @@
       }
 
       .menu-toggle{
+        display:inline-flex;
+        justify-self:end;
         width:42px;
         height:42px;
       }
@@ -445,35 +454,28 @@
         padding:8px 0;
       }
 
-      .hero{
-        min-height:100svh;
-      }
-
       .hero-bg img{
         object-position:center top;
       }
 
       .hero-content{
-        min-height:auto;
-        padding-top:calc(var(--header-h) + 140px);
-        padding-bottom:16px;
-        justify-content:center;
+        min-height:100svh;
+        padding-top:calc(var(--header-h) + 165px);
+        padding-bottom:18px;
         align-items:flex-start;
+        justify-content:center;
       }
 
       .hero-card{
         width:100%;
         min-height:700px;
-        margin:0 auto 0;
-        padding:54px 34px 34px;
+        margin:0 auto;
+        padding:56px 28px 40px;
         border-radius:28px;
       }
 
       .hero-copy{
-        width:100%;
-        max-width:none;
-        align-items:center;
-        text-align:center;
+        max-width:100%;
       }
 
       .hero-title-desktop{
@@ -482,20 +484,18 @@
 
       .hero-title-mobile{
         display:block;
-        font-size:52px;
+        font-size:46px;
         line-height:.92;
-        max-width:560px;
-        text-align:center;
+        max-width:100%;
       }
 
       .hero-cta{
         width:100%;
-        max-width:640px;
-        min-height:88px;
-        margin-top:48px;
+        max-width:600px;
+        min-height:90px;
+        margin-top:44px;
         padding:0 18px;
-        font-size:2rem;
-        align-self:center;
+        font-size:1.95rem;
       }
     }
 
@@ -504,75 +504,38 @@
         width:calc(100% - 24px);
       }
 
+      .header-inner{
+        grid-template-columns:50px 1fr 40px;
+      }
+
       .brand-logo{
-        width:50px;
-      }
-
-      .header-actions{
-        gap:10px;
+        width:44px;
       }
 
       .header-cta{
-        width:270px;
-        min-width:270px;
-        min-height:58px;
-        padding:0 18px;
-        font-size:1.35rem;
-      }
-
-      .whatsapp-icon{
-        width:22px;
-        height:22px;
+        width:255px;
+        min-width:255px;
+        min-height:54px;
+        font-size:1.18rem;
       }
 
       .hero-content{
-        padding-top:calc(var(--header-h) + 150px);
+        padding-top:calc(var(--header-h) + 170px);
       }
 
       .hero-card{
-        min-height:760px;
-        padding:58px 28px 34px;
+        min-height:710px;
+        padding:58px 24px 38px;
       }
 
       .hero-title-mobile{
-        font-size:58px;
-        max-width:620px;
+        font-size:50px;
       }
 
       .hero-cta{
-        min-height:92px;
-        margin-top:52px;
-        font-size:2.15rem;
-      }
-    }
-
-    @media (max-width: 560px){
-      .header-cta{
-        width:230px;
-        min-width:230px;
-        min-height:52px;
-        font-size:1.12rem;
-        padding:0 16px;
-      }
-
-      .hero-content{
-        padding-top:calc(var(--header-h) + 165px);
-      }
-
-      .hero-card{
-        min-height:760px;
-        padding:54px 24px 32px;
-      }
-
-      .hero-title-mobile{
-        font-size:49px;
-        max-width:100%;
-      }
-
-      .hero-cta{
-        min-height:86px;
-        margin-top:48px;
-        font-size:1.82rem;
+        min-height:88px;
+        margin-top:42px;
+        font-size:1.9rem;
       }
     }
 
@@ -581,16 +544,21 @@
         width:calc(100% - 22px);
       }
 
+      .header-inner{
+        grid-template-columns:46px 1fr 38px;
+      }
+
       .brand-logo{
-        width:46px;
+        width:42px;
       }
 
       .header-cta{
-        width:205px;
-        min-width:205px;
+        width:220px;
+        min-width:220px;
         min-height:50px;
-        font-size:1rem;
+        font-size:1.04rem;
         gap:10px;
+        padding:0 14px;
       }
 
       .whatsapp-icon{
@@ -599,42 +567,34 @@
       }
 
       .menu-toggle{
-        width:40px;
-        height:40px;
+        width:38px;
+        height:38px;
       }
 
       .hero-content{
-        padding-top:calc(var(--header-h) + 175px);
+        padding-top:calc(var(--header-h) + 170px);
       }
 
       .hero-card{
-        min-height:720px;
-        padding:48px 20px 30px;
-        border-radius:26px;
+        min-height:665px;
+        padding:52px 20px 34px;
       }
 
       .hero-title-mobile{
-        font-size:40px;
-        line-height:.92;
+        font-size:39px;
       }
 
       .hero-cta{
         min-height:82px;
-        margin-top:44px;
         font-size:1.62rem;
-        padding:0 14px;
       }
     }
 
     @media (max-width: 390px){
       .header-cta{
-        width:190px;
-        min-width:190px;
-        font-size:.92rem;
-      }
-
-      .hero-content{
-        padding-top:calc(var(--header-h) + 180px);
+        width:205px;
+        min-width:205px;
+        font-size:.96rem;
       }
 
       .hero-title-mobile{
@@ -642,7 +602,7 @@
       }
 
       .hero-cta{
-        font-size:1.46rem;
+        font-size:1.5rem;
       }
     }
   </style>
@@ -715,12 +675,10 @@
             </h1>
 
             <h1 class="hero-title hero-title-mobile">
-              ESPECIALISTAS<br>
-              EM <span class="green">CÂMBIO</span><br>
-              <span class="green">AUTOMÁTICO</span><br>
-              AUTOMOTIVA<br>
-              EM MARINGÁ E<br>
-              REGIÃO!
+              ESPECIALISTAS EM<br>
+              <span class="green">CÂMBIO AUTOMÁTICO</span><br>
+              AUTOMOTIVA EM<br>
+              MARINGÁ E REGIÃO!
             </h1>
 
             <a
