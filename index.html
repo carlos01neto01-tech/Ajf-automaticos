@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJF Automáticos | Câmbio Automático em Maringá</title>
-  <meta name="description" content="Especialistas em câmbio automático automotiva em Maringá e região." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJF Automáticos</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header class="site-header" id="topo">
-    <div class="container header-inner">
-      <a href="#topo" class="brand" aria-label="AJF Automáticos - Início">
-        <img src="assets/logo.webp" alt="Logo AJF Automáticos" class="brand-logo" />
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-container">
+
+    <div class="logo">
+      <img src="assets/logo.png" alt="AJF">
+    </div>
+
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">Sobre Nós</a>
+      <a href="#">Serviços</a>
+      <a href="#">Cases de Sucesso</a>
+    </nav>
+
+    <div class="cta-header">
+      <a href="#" class="btn-whatsapp">
+        Entra em Contato
+        <img src="assets/whatsapp.png">
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-container">
+
+    <div class="hero-box">
+
+      <h1>
+        ESPECIALISTAS EM <span>CÂMBIO AUTOMÁTICO</span><br>
+        AUTOMOTIVA EM MARINGÁ E REGIÃO!
+      </h1>
+
+      <a href="#" class="btn-main">
+        AGENDA SUA REVISÃO AGORA
       </a>
 
-      <nav class="desktop-nav" aria-label="Menu principal">
-        <a href="#home" class="active">Home</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#cases">Cases de Sucesso</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o." class="contact-button header-cta" aria-label="Entrar em contato pelo WhatsApp">
-          <span>Entra em Contato</span>
-          <img src="assets/whatsapp-icon.webp" alt="WhatsApp" class="whatsapp-icon" />
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <nav class="mobile-nav" aria-label="Menu mobile">
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#cases">Cases de Sucesso</a>
-      </nav>
-    </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero" id="home">
-      <picture class="hero-bg">
-        <source media="(max-width: 767px)" srcset="assets/hero-mobile.webp" />
-        <img src="assets/hero-desktop.webp" alt="Carro esportivo verde em ambiente urbano noturno" />
-      </picture>
+</section>
 
-      <div class="hero-overlay"></div>
-
-      <div class="container hero-content">
-        <div class="hero-card">
-          <h1>
-            ESPECIALISTAS EM <span>CÂMBIO AUTOMÁTICO</span>
-            AUTOMOTIVA EM MARINGÁ E REGIÃO!
-          </h1>
-
-          <a href="https://wa.me/5544999999999?text=Ol%C3%A1%2C%20quero%20agendar%20minha%20revis%C3%A3o." class="contact-button hero-cta" aria-label="Agendar revisão agora">
-            <span>AGENDA SUA REVISÃO AGORA</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre" class="spacer-section" aria-hidden="true"></section>
-    <section id="servicos" class="spacer-section" aria-hidden="true"></section>
-    <section id="cases" class="spacer-section" aria-hidden="true"></section>
-  </main>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
