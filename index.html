@@ -984,3 +984,371 @@
 }
 </style>
 
+
+<section class="ajf34-sec">
+  <div class="ajf34-wrap">
+
+    <h2 class="ajf34-title">
+      TRABALHAMOS COM QUALQUER
+      <span>MODELO</span> DE
+      <span>CARRO AUTOMÁTICO</span>
+    </h2>
+
+    <div class="ajf34-slider">
+      <div class="ajf34-blur ajf34-blur-left"></div>
+      <div class="ajf34-blur ajf34-blur-right"></div>
+
+      <div class="ajf34-track">
+        <article class="ajf34-card">
+          <img src="assets/carro 1.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="carro 2.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="assets/carro 3.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="assets/carro 4.webp" alt="Carro automático atendido pela AJF">
+        </article>
+
+        <article class="ajf34-card">
+          <img src="assets/carro 1.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="assets/carro 2.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="assets/carro 3.webp" alt="Carro automático atendido pela AJF">
+        </article>
+        <article class="ajf34-card">
+          <img src="assets/carro 4.webp" alt="Carro automático atendido pela AJF">
+        </article>
+      </div>
+    </div>
+
+    <div class="ajf34-dots" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <h3 class="ajf34-brand-title">
+      PARA TODO TIPO DE <span>MARCA</span>
+    </h3>
+
+  </div>
+
+  <div class="ajf34-brands-band">
+    <div class="ajf34-brands-wrap">
+      <div class="ajf34-brands">
+        <img src="assets/VOLKSVAGEN 2.png" alt="Volkswagen">
+        <img src="assets/HYUNDAY 2.png" alt="Hyundai">
+        <img src="assets/MERCEDES.png" alt="Mercedes">
+        <img src="assets/CHEVROLET 2.png" alt="Chevrolet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ajf34-sec{
+  --ajf-boundary: clamp(130px, 7.7vw, 132px);
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#ececec;
+  overflow:hidden;
+  position:relative;
+}
+
+.ajf34-wrap{
+  width:100%;
+  box-sizing:border-box;
+  padding:64px var(--ajf-boundary) 0;
+}
+
+.ajf34-title{
+  margin:0 auto 42px;
+  max-width:1100px;
+  text-align:center;
+  color:#000;
+  font-size:clamp(36px, 4.4vw, 68px);
+  line-height:.95;
+  font-weight:900;
+  letter-spacing:-1.4px;
+  text-transform:uppercase;
+}
+
+.ajf34-title span{
+  color:#20e51f;
+}
+
+/* CARROSSEL */
+.ajf34-slider{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  margin:0 auto;
+}
+
+.ajf34-track{
+  display:flex;
+  align-items:stretch;
+  gap:22px;
+  width:max-content;
+  animation:ajf34Move 28s linear infinite;
+  will-change:transform;
+  padding:0;
+}
+
+.ajf34-slider:hover .ajf34-track{
+  animation-play-state:paused;
+}
+
+@keyframes ajf34Move{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(calc(-50% - 11px)); }
+}
+
+.ajf34-card{
+  width:calc((100vw - (var(--ajf-boundary) * 2) - 44px) / 3);
+  max-width:410px;
+  min-width:300px;
+  border-radius:34px;
+  overflow:hidden;
+  background:#d9d9d9;
+  flex:0 0 auto;
+}
+
+.ajf34-card img{
+  width:100%;
+  aspect-ratio:0.83 / 1;
+  object-fit:cover;
+  display:block;
+}
+
+.ajf34-blur{
+  position:absolute;
+  top:0;
+  width:90px;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+}
+
+.ajf34-blur-left{
+  left:0;
+  background:linear-gradient(to right, #ececec 0%, rgba(236,236,236,.94) 35%, rgba(236,236,236,0) 100%);
+}
+
+.ajf34-blur-right{
+  right:0;
+  background:linear-gradient(to left, #ececec 0%, rgba(236,236,236,.94) 35%, rgba(236,236,236,0) 100%);
+}
+
+/* DOTS */
+.ajf34-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin:28px 0 86px;
+}
+
+.ajf34-dots span{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#c4efc1;
+  display:block;
+}
+
+.ajf34-dots span.active{
+  background:#20e51f;
+}
+
+/* TITULO MARCAS */
+.ajf34-brand-title{
+  margin:0 0 42px;
+  text-align:center;
+  color:#000;
+  font-size:clamp(30px, 3.7vw, 62px);
+  line-height:.95;
+  font-weight:900;
+  letter-spacing:-1.1px;
+  text-transform:uppercase;
+}
+
+.ajf34-brand-title span{
+  color:#20e51f;
+}
+
+/* FAIXA MARCAS */
+.ajf34-brands-band{
+  width:100%;
+  background:linear-gradient(180deg, #15f10f 0%, #63ff58 100%);
+  padding:34px 0 30px;
+}
+
+.ajf34-brands-wrap{
+  width:100%;
+  box-sizing:border-box;
+  padding:0 var(--ajf-boundary);
+}
+
+.ajf34-brands{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  align-items:center;
+  gap:28px;
+}
+
+.ajf34-brands img{
+  max-width:100%;
+  max-height:118px;
+  height:auto;
+  margin:0 auto;
+  display:block;
+  object-fit:contain;
+}
+
+/* NOTEBOOK */
+@media (max-width:1366px){
+  .ajf34-sec{
+    --ajf-boundary: 92px;
+  }
+
+  .ajf34-card{
+    width:calc((100vw - (var(--ajf-boundary) * 2) - 44px) / 3);
+  }
+}
+
+/* TABLET */
+@media (max-width:1024px){
+  .ajf34-sec{
+    --ajf-boundary: 54px;
+  }
+
+  .ajf34-wrap{
+    padding-top:54px;
+  }
+
+  .ajf34-title{
+    margin-bottom:34px;
+    font-size:clamp(32px, 5vw, 52px);
+  }
+
+  .ajf34-card{
+    width:calc((100vw - (var(--ajf-boundary) * 2) - 22px) / 2);
+    min-width:280px;
+    border-radius:28px;
+  }
+
+  .ajf34-track{
+    gap:18px;
+  }
+
+  .ajf34-dots{
+    margin:24px 0 62px;
+  }
+
+  .ajf34-brand-title{
+    font-size:clamp(28px, 4.7vw, 48px);
+    margin-bottom:34px;
+  }
+
+  .ajf34-brands{
+    gap:18px;
+  }
+
+  .ajf34-brands img{
+    max-height:92px;
+  }
+}
+
+/* MOBILE */
+@media (max-width:767px){
+  .ajf34-sec{
+    --ajf-boundary: 16px;
+  }
+
+  .ajf34-wrap{
+    padding:42px var(--ajf-boundary) 0;
+  }
+
+  .ajf34-title{
+    max-width:100%;
+    font-size:clamp(28px, 10vw, 50px);
+    line-height:.92;
+    margin-bottom:28px;
+  }
+
+  .ajf34-slider{
+    overflow:hidden;
+  }
+
+  .ajf34-track{
+    gap:0;
+    animation:ajf34MoveMobile 16s linear infinite;
+  }
+
+  @keyframes ajf34MoveMobile{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+  }
+
+  .ajf34-card{
+    width:calc(100vw - (var(--ajf-boundary) * 2));
+    min-width:calc(100vw - (var(--ajf-boundary) * 2));
+    max-width:none;
+    border-radius:34px;
+    margin-right:0;
+  }
+
+  .ajf34-card img{
+    aspect-ratio:0.83 / 1.18;
+  }
+
+  .ajf34-blur{
+    width:34px;
+  }
+
+  .ajf34-dots{
+    margin:22px 0 54px;
+    gap:8px;
+  }
+
+  .ajf34-dots span{
+    width:12px;
+    height:12px;
+  }
+
+  .ajf34-brand-title{
+    display:block;
+    font-size:clamp(26px, 9vw, 46px);
+    line-height:.94;
+    margin:0 0 28px;
+  }
+
+  .ajf34-brands-band{
+    padding:26px 0 22px;
+  }
+
+  .ajf34-brands-wrap{
+    padding:0 var(--ajf-boundary);
+  }
+
+  .ajf34-brands{
+    grid-template-columns:repeat(4, minmax(0,1fr));
+    gap:10px;
+  }
+
+  .ajf34-brands img{
+    max-height:56px;
+    width:auto;
+  }
+}
+</style>
