@@ -696,179 +696,249 @@
       </div>
     </section>
 
-    <section id="sobre" class="spacer-section" aria-hidden="true"></section>
-    <section id="servicos" class="spacer-section" aria-hidden="true"></section>
-    <section id="cases" class="spacer-section" aria-hidden="true"></section>
-  </main>
+   <!-- PARTE 2 AJF -->
+<section class="ajf-parte2">
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileLinks = document.querySelectorAll(".mobile-nav a");
-
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    }
-  </script>
-</body>
-</html>
-<!-- FAIXA ANIMADA + CARDS AJF -->
-<section class="ajf-faixa-wrapper">
-
-  <!-- FAIXA ANIMADA -->
-  <div class="ajf-faixa">
+  <!-- FAIXA CONTÍNUA -->
+  <div class="ajf-faixa-topo">
     <div class="ajf-faixa-track">
-      <span>DIAGNÓSTICO PRECISO</span>
-      <span>•</span>
-      <span>TECNOLOGIA AVANÇADA</span>
-      <span>•</span>
       <span>ATENDIMENTO PREMIUM</span>
       <span>•</span>
       <span>TRANSPARÊNCIA TOTAL</span>
       <span>•</span>
       <span>ALTA PERFORMANCE</span>
+      <span>•</span>
+      <span>DIAGNÓSTICO PRECISO</span>
+      <span>•</span>
+      <span>TECNOLOGIA AVANÇADA</span>
+      <span>•</span>
 
-      <!-- duplicado pra loop infinito -->
-      <span>DIAGNÓSTICO PRECISO</span>
-      <span>•</span>
-      <span>TECNOLOGIA AVANÇADA</span>
-      <span>•</span>
       <span>ATENDIMENTO PREMIUM</span>
       <span>•</span>
       <span>TRANSPARÊNCIA TOTAL</span>
       <span>•</span>
       <span>ALTA PERFORMANCE</span>
+      <span>•</span>
+      <span>DIAGNÓSTICO PRECISO</span>
+      <span>•</span>
+      <span>TECNOLOGIA AVANÇADA</span>
+      <span>•</span>
     </div>
   </div>
 
-  <!-- CARDS -->
-  <div class="ajf-cards">
+  <!-- CONTEÚDO -->
+  <div class="ajf-parte2-container">
+    <div class="ajf-parte2-cards">
 
-    <div class="ajf-card">
-      <img src="diagnostico.png" alt="">
-      <h3>Diagnóstico de<br>câmbio automático</h3>
+      <div class="ajf-card-ajf">
+        <div class="ajf-card-icon">
+          <img src="lupa-diagnostico.webp" alt="Diagnóstico de câmbio automático">
+        </div>
+        <h3>Diagnóstico de<br>câmbio automático</h3>
+      </div>
+
+      <div class="ajf-card-ajf">
+        <div class="ajf-card-icon">
+          <img src="revisao-preventiva.webp" alt="Revisão preventiva">
+        </div>
+        <h3>Revisão preventiva</h3>
+      </div>
+
+      <div class="ajf-card-ajf">
+        <div class="ajf-card-icon">
+          <img src="atendimento-premium.webp" alt="Atendimento especializado em veículos premium">
+        </div>
+        <h3>Atendimento especializado<br>em veículos premium</h3>
+      </div>
+
     </div>
-
-    <div class="ajf-card">
-      <img src="revisao.png" alt="">
-      <h3>Revisão preventiva</h3>
-    </div>
-
-    <div class="ajf-card">
-      <img src="atendimento.png" alt="">
-      <h3>Atendimento especializado<br>em veículos premium</h3>
-    </div>
-
   </div>
 
 </section>
 
 <style>
-
-/* FUNDO GERAL */
-.ajf-faixa-wrapper{
-  background: #000;
-  padding: 60px 20px;
+/* ==========================
+   PARTE 2 AJF
+========================== */
+.ajf-parte2{
+  position: relative;
+  width: 100%;
+  background: #39ff14;
+  padding: 0;
   overflow: hidden;
 }
 
-/* FAIXA */
-.ajf-faixa{
+/* FAIXA NO TOPO DA SESSÃO */
+.ajf-faixa-topo{
+  position: relative;
   width: 100%;
-  overflow: hidden;
+  background: #000;
   border-top: 1px solid #00ff66;
   border-bottom: 1px solid #00ff66;
-  margin-bottom: 60px;
+  overflow: hidden;
+  z-index: 2;
+  margin: 0;
 }
 
 .ajf-faixa-track{
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 34px;
   white-space: nowrap;
-  animation: scrollFaixa 18s linear infinite;
-  color: #00ff66;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 15px 0;
+  width: max-content;
+  min-width: 200%;
+  padding: 16px 0;
+  animation: ajfFaixaMove 22s linear infinite;
 }
 
-/* ANIMAÇÃO */
-@keyframes scrollFaixa{
-  from{
+.ajf-faixa-track span{
+  color: #00ff66;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+@keyframes ajfFaixaMove{
+  0%{
     transform: translateX(0);
   }
-  to{
+  100%{
     transform: translateX(-50%);
   }
 }
 
-/* CARDS */
-.ajf-cards{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1100px;
+/* ÁREA DOS CARDS */
+.ajf-parte2-container{
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 56px 24px 78px;
+  display: flex;
+  justify-content: center;
 }
 
-.ajf-card{
-  background: linear-gradient(180deg, #000 0%, #003d14 100%);
-  border-radius: 20px;
-  padding: 40px 30px;
+.ajf-parte2-cards{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* CARD */
+.ajf-card-ajf{
+  position: relative;
+  min-height: 370px;
+  background: linear-gradient(180deg, #000000 0%, #001f08 38%, #00a51f 100%);
+  border: 1.5px solid #f2f2f2;
+  border-radius: 22px;
+  box-shadow:
+    0 0 0 1px rgba(0,255,102,0.25),
+    0 10px 22px rgba(0,0,0,0.28),
+    0 0 18px rgba(0,255,102,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 28px;
   text-align: center;
-  border: 1px solid #00ff66;
-  box-shadow: 0 0 15px rgba(0,255,102,0.25);
-  transition: 0.3s;
 }
 
-.ajf-card:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,255,102,0.6);
+.ajf-card-icon{
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
 }
 
-.ajf-card img{
-  width: 70px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 6px #00ff66);
+.ajf-card-icon img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.ajf-card h3{
-  color: #fff;
-  font-size: 20px;
-  line-height: 1.3;
+.ajf-card-ajf h3{
+  margin: 0;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.3px;
+  max-width: 290px;
+}
+
+/* DESKTOP MAIOR */
+@media (min-width: 1440px){
+  .ajf-parte2-container{
+    padding: 62px 36px 86px;
+  }
+
+  .ajf-card-ajf{
+    min-height: 390px;
+  }
+
+  .ajf-card-ajf h3{
+    font-size: 25px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px){
+  .ajf-parte2-cards{
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+
+  .ajf-card-ajf{
+    min-height: 340px;
+  }
+
+  .ajf-card-ajf h3{
+    font-size: 21px;
+  }
 }
 
 /* MOBILE */
-@media(max-width: 768px){
-
-  .ajf-cards{
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .ajf-card{
-    padding: 35px 25px;
-  }
-
-  .ajf-card h3{
-    font-size: 18px;
-  }
-
+@media (max-width: 767px){
   .ajf-faixa-track{
-    font-size: 16px;
-    gap: 25px;
+    gap: 24px;
+    padding: 14px 0;
   }
 
-}
+  .ajf-faixa-track span{
+    font-size: 13px;
+  }
 
+  .ajf-parte2-container{
+    padding: 26px 18px 54px;
+  }
+
+  .ajf-parte2-cards{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ajf-card-ajf{
+    min-height: 300px;
+    border-radius: 20px;
+    padding: 30px 22px;
+  }
+
+  .ajf-card-icon{
+    width: 84px;
+    height: 84px;
+    margin-bottom: 22px;
+  }
+
+  .ajf-card-ajf h3{
+    font-size: 18px;
+    line-height: 1.05;
+    max-width: 250px;
+  }
+}
 </style>
