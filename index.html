@@ -13,7 +13,6 @@
   <style>
     :root{
       --neon:#19f000;
-      --neon-dark:#0fd000;
       --text:#ffffff;
       --header-bg:rgba(30,47,49,.58);
       --line:rgba(255,255,255,.40);
@@ -480,7 +479,7 @@
       max-width:270px;
     }
 
-    /* PARTE 3 E 4 */
+    /* PARTE 3 */
     .ajf34-sec{
       --ajf-boundary: clamp(130px, 7.7vw, 132px);
       width:100%;
@@ -642,10 +641,8 @@
     .ajf-services-sec{
       position:relative;
       width:100%;
-      min-height:980px;
       overflow:hidden;
       background:#000;
-      isolation:isolate;
     }
 
     .ajf-services-bg,
@@ -665,136 +662,85 @@
 
     .ajf-services-overlay{
       background:
-        linear-gradient(180deg, rgba(0,0,0,.56) 0%, rgba(0,0,0,.64) 30%, rgba(0,0,0,.78) 100%),
-        linear-gradient(90deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,.10) 48%, rgba(0,0,0,.22) 100%);
+        linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.66) 36%, rgba(0,0,0,.78) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 50%, rgba(0,0,0,.18) 100%);
     }
 
     .ajf-services-wrap{
       position:relative;
       z-index:2;
-      width:min(calc(100% - 120px), 1520px);
+      width:min(calc(100% - 90px), 1420px);
       margin:0 auto;
-      padding:110px 0 96px;
+      padding:90px 0 88px;
     }
 
     .ajf-services-top{
-      position:relative;
-      width:100%;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      margin-bottom:110px;
+      text-align:center;
+      margin-bottom:92px;
     }
 
     .ajf-services-title{
       margin:0;
-      text-align:center;
-      text-transform:uppercase;
-      color:#fff;
-      font-size:clamp(50px, 4.1vw, 68px);
+      font-size:clamp(48px, 4vw, 66px);
       line-height:.92;
-      letter-spacing:-1px;
-      font-weight:600;
+      color:#fff;
+      text-transform:uppercase;
     }
 
     .ajf-services-title span{
       color:#19f000;
     }
 
-    .ajf-services-arrows{
-      position:absolute;
-      right:0;
-      top:6px;
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .ajf-services-arrow{
-      width:58px;
-      height:58px;
-      border-radius:12px;
-      border:2px solid rgba(25,240,0,.85);
-      background:rgba(0,0,0,.26);
-      color:#19f000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 0 0 1px rgba(25,240,0,.08);
-      cursor:default;
-      pointer-events:none;
-    }
-
-    .ajf-services-arrow span{
-      font-size:34px;
-      line-height:1;
-      transform:translateY(-1px);
-    }
-
     .ajf-services-grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:34px;
-      align-items:stretch;
+      grid-template-columns:repeat(3, 1fr);
+      gap:30px;
+      align-items:start;
     }
 
     .ajf-service-card{
       position:relative;
-      min-height:610px;
-      padding:110px 34px 34px;
-      border-radius:32px;
-      border:2px solid rgba(25,240,0,.82);
+      min-height:400px;
+      padding:84px 26px 24px;
+      border:2px solid #19f000;
+      border-radius:28px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.50) 46%, rgba(15,72,20,.34) 100%);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      box-shadow:
-        inset 0 0 90px rgba(25,240,0,.08),
-        0 0 0 1px rgba(25,240,0,.08);
+        linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.50) 52%, rgba(7,56,12,.32) 100%);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
       text-align:center;
-      overflow:visible;
-      transition:
-        transform .28s ease,
-        box-shadow .28s ease,
-        border-color .28s ease;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
       cursor:pointer;
+      overflow:visible;
     }
 
     .ajf-service-card:hover{
-      transform:translateY(-8px) scale(1.015);
-      border-color:#69ff73;
+      transform:translateY(-8px) scale(1.02);
+      border-color:#5cff67;
       box-shadow:
-        inset 0 0 110px rgba(25,240,0,.12),
-        0 0 20px rgba(25,240,0,.22),
-        0 0 44px rgba(25,240,0,.16);
+        0 0 20px rgba(25,240,0,.20),
+        0 0 42px rgba(25,240,0,.12);
     }
 
     .ajf-service-thumb{
       position:absolute;
-      top:-56px;
+      top:-44px;
       left:50%;
       transform:translateX(-50%);
-      width:168px;
-      height:168px;
-      border-radius:28px;
+      width:112px;
+      height:112px;
+      border:2px solid #19f000;
+      border-radius:22px;
       overflow:hidden;
-      border:2px solid rgba(25,240,0,.88);
-      box-shadow:
-        0 0 0 1px rgba(25,240,0,.10),
-        0 0 24px rgba(25,240,0,.10);
       background:#111;
-      transition:
-        transform .28s ease,
-        box-shadow .28s ease,
-        border-color .28s ease;
+      transition:transform .28s ease, box-shadow .28s ease;
     }
 
     .ajf-service-card:hover .ajf-service-thumb{
       transform:translateX(-50%) scale(1.04);
-      border-color:#74ff7d;
       box-shadow:
-        0 0 18px rgba(25,240,0,.22),
-        0 0 34px rgba(25,240,0,.16);
+        0 0 16px rgba(25,240,0,.20),
+        0 0 30px rgba(25,240,0,.12);
     }
 
     .ajf-service-thumb img{
@@ -804,20 +750,14 @@
     }
 
     .ajf-service-content{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      padding-top:122px;
+      padding-top:54px;
     }
 
     .ajf-service-content h3{
       margin:0;
+      font-size:22px;
+      line-height:1.12;
       color:#fff;
-      font-size:clamp(34px, 2.6vw, 56px);
-      line-height:.92;
-      font-weight:600;
     }
 
     .ajf-service-content .green{
@@ -825,49 +765,43 @@
     }
 
     .ajf-service-content p{
-      margin:34px 0 0;
-      max-width:520px;
-      color:rgba(255,255,255,.88);
+      margin:18px auto 0;
+      max-width:300px;
       font-family:Arial, Helvetica, sans-serif;
-      font-size:24px;
-      line-height:1.04;
-      letter-spacing:-0.3px;
+      font-size:16px;
+      line-height:1.15;
+      color:rgba(255,255,255,.88);
       opacity:0;
       max-height:0;
       overflow:hidden;
-      transform:translateY(14px);
-      transition:
-        opacity .28s ease,
-        transform .28s ease,
-        max-height .28s ease;
+      transform:translateY(10px);
+      transition:opacity .25s ease, max-height .25s ease, transform .25s ease;
     }
 
     .ajf-service-card:hover .ajf-service-content p{
       opacity:1;
-      max-height:200px;
+      max-height:120px;
       transform:translateY(0);
     }
 
-    .ajf-service-card.is-open{
-      transform:translateY(-4px) scale(1.01);
-      border-color:#69ff73;
+    .ajf-service-card.active{
+      transform:translateY(-4px);
+      border-color:#5cff67;
       box-shadow:
-        inset 0 0 110px rgba(25,240,0,.12),
-        0 0 20px rgba(25,240,0,.22),
-        0 0 44px rgba(25,240,0,.16);
+        0 0 18px rgba(25,240,0,.18),
+        0 0 34px rgba(25,240,0,.10);
     }
 
-    .ajf-service-card.is-open .ajf-service-thumb{
-      transform:translateX(-50%) scale(1.04);
-      border-color:#74ff7d;
+    .ajf-service-card.active .ajf-service-thumb{
+      transform:translateX(-50%) scale(1.03);
       box-shadow:
-        0 0 18px rgba(25,240,0,.22),
-        0 0 34px rgba(25,240,0,.16);
+        0 0 14px rgba(25,240,0,.18),
+        0 0 26px rgba(25,240,0,.10);
     }
 
-    .ajf-service-card.is-open .ajf-service-content p{
+    .ajf-service-card.active .ajf-service-content p{
       opacity:1;
-      max-height:200px;
+      max-height:120px;
       transform:translateY(0);
     }
 
@@ -930,34 +864,7 @@
       }
 
       .ajf-services-top{
-        margin-bottom:92px;
-      }
-
-      .ajf-services-grid{
-        gap:26px;
-      }
-
-      .ajf-service-card{
-        min-height:570px;
-        padding:100px 28px 30px;
-      }
-
-      .ajf-service-thumb{
-        width:150px;
-        height:150px;
-        top:-50px;
-      }
-
-      .ajf-service-content{
-        padding-top:110px;
-      }
-
-      .ajf-service-content h3{
-        font-size:clamp(30px, 2.4vw, 48px);
-      }
-
-      .ajf-service-content p{
-        font-size:21px;
+        margin-bottom:86px;
       }
     }
 
@@ -1162,62 +1069,54 @@
       }
 
       .ajf-services-wrap{
-        width:min(calc(100% - 44px), 1200px);
-        padding:82px 0 76px;
+        width:calc(100% - 32px);
+        padding:70px 0 68px;
       }
 
       .ajf-services-top{
         margin-bottom:72px;
       }
 
-      .ajf-services-title{
-        font-size:clamp(40px, 6vw, 56px);
-      }
-
-      .ajf-services-arrows{
-        display:none;
-      }
-
       .ajf-services-grid{
         grid-template-columns:1fr;
-        gap:92px;
+        gap:72px;
       }
 
       .ajf-service-card{
-        min-height:420px;
-        max-width:760px;
-        width:100%;
-        margin:0 auto;
-        padding:92px 28px 28px;
+        min-height:auto;
+        padding:78px 22px 24px;
+        border-radius:24px;
       }
 
       .ajf-service-thumb{
-        width:148px;
-        height:148px;
-        top:-48px;
+        width:102px;
+        height:102px;
+        top:-38px;
+        border-radius:20px;
       }
 
       .ajf-service-content{
-        padding-top:90px;
+        padding-top:32px;
       }
 
       .ajf-service-content h3{
-        font-size:clamp(34px, 5vw, 48px);
+        font-size:26px;
+        line-height:1.06;
       }
 
       .ajf-service-content p{
-        margin-top:24px;
-        font-size:21px;
-        max-width:480px;
+        margin-top:18px;
+        max-width:260px;
+        font-size:15px;
         opacity:0;
         max-height:0;
-        transform:translateY(14px);
+        transform:translateY(8px);
       }
 
       .ajf-service-card:hover .ajf-service-content p{
         opacity:0;
         max-height:0;
-        transform:translateY(14px);
+        transform:translateY(8px);
       }
     }
 
@@ -1388,53 +1287,44 @@
       }
 
       .ajf-services-wrap{
-        width:calc(100% - 32px);
-        padding:66px 0 58px;
+        width:calc(100% - 24px);
+        padding:60px 0 54px;
       }
 
       .ajf-services-top{
-        margin-bottom:62px;
+        margin-bottom:64px;
       }
 
       .ajf-services-title{
-        font-size:52px;
+        font-size:44px;
         line-height:.92;
       }
 
       .ajf-services-grid{
-        gap:86px;
+        gap:68px;
       }
 
       .ajf-service-card{
-        min-height:370px;
-        border-radius:28px;
-        padding:82px 24px 24px;
+        padding:74px 18px 22px;
       }
 
       .ajf-service-thumb{
-        width:124px;
-        height:124px;
-        top:-40px;
-        border-radius:24px;
+        width:94px;
+        height:94px;
+        top:-34px;
       }
 
       .ajf-service-content{
-        padding-top:80px;
+        padding-top:26px;
       }
 
       .ajf-service-content h3{
-        font-size:30px;
-        line-height:.94;
+        font-size:23px;
       }
 
       .ajf-service-content p{
-        margin-top:22px;
-        font-size:17px;
-        line-height:1.04;
-        max-width:280px;
-        opacity:0;
-        max-height:0;
-        transform:translateY(12px);
+        font-size:14px;
+        max-width:240px;
       }
     }
 
@@ -1495,45 +1385,8 @@
         max-width:72vw;
       }
 
-      .ajf-services-wrap{
-        width:calc(100% - 24px);
-        padding:58px 0 54px;
-      }
-
       .ajf-services-top{
-        margin-bottom:54px;
-      }
-
-      .ajf-services-title{
-        font-size:46px;
-      }
-
-      .ajf-services-grid{
-        gap:78px;
-      }
-
-      .ajf-service-card{
-        min-height:350px;
-        padding:76px 20px 22px;
-      }
-
-      .ajf-service-thumb{
-        width:116px;
-        height:116px;
-        top:-38px;
-      }
-
-      .ajf-service-content{
-        padding-top:72px;
-      }
-
-      .ajf-service-content h3{
-        font-size:27px;
-      }
-
-      .ajf-service-content p{
-        font-size:16px;
-        max-width:250px;
+        margin-bottom:58px;
       }
     }
 
@@ -1685,7 +1538,7 @@
 
           <article class="ajf2-card">
             <div class="ajf2-icon">
-              <img src="assets/satisfação.webp" alt="Atendimento especializado em veículos premium">
+              <img src="assets/satisfacao.webp" alt="Atendimento especializado em veículos premium">
             </div>
             <h3>Atendimento especializado<br>em veículos premium</h3>
           </article>
@@ -1711,10 +1564,10 @@
             <article class="ajf34-card"><img src="assets/carro 3.webp" alt="Carro automático atendido pela AJF"></article>
             <article class="ajf34-card"><img src="assets/carro 4.webp" alt="Carro automático atendido pela AJF"></article>
 
-            <article class="ajf34-card"><img src="assets/carro 5.webp" alt="Carro automático atendido pela AJF"></article>
-            <article class="ajf34-card"><img src="assets/carro 6.webp" alt="Carro automático atendido pela AJF"></article>
-            <article class="ajf34-card"><img src="assets/carro 7.webp" alt="Carro automático atendido pela AJF"></article>
-            <article class="ajf34-card"><img src="assets/carro 8.webp" alt="Carro automático atendido pela AJF"></article>
+            <article class="ajf34-card"><img src="assets/carro 1.webp" alt="Carro automático atendido pela AJF"></article>
+            <article class="ajf34-card"><img src="assets/carro 2.webp" alt="Carro automático atendido pela AJF"></article>
+            <article class="ajf34-card"><img src="assets/carro 3.webp" alt="Carro automático atendido pela AJF"></article>
+            <article class="ajf34-card"><img src="assets/carro 4.webp" alt="Carro automático atendido pela AJF"></article>
           </div>
         </div>
 
@@ -1743,356 +1596,122 @@
       </div>
     </section>
 
-<section class="ajf-services-sec" id="servicos">
+    <section class="ajf-services-sec" id="servicos">
+      <div class="ajf-services-bg">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
+          <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="">
+        </picture>
+        <div class="ajf-services-overlay"></div>
+      </div>
 
-  <div class="ajf-services-bg">
-    <picture>
-      <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
-      <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="">
-    </picture>
-    <div class="ajf-services-overlay"></div>
-  </div>
-
-  <div class="ajf-services-wrap">
-
-    <div class="ajf-services-top">
-      <h2 class="ajf-services-title">
-        NOSSOS <span>SERVIÇOS</span>
-      </h2>
-    </div>
-
-    <div class="ajf-services-grid">
-
-      <article class="ajf-service-card">
-        <div class="ajf-service-thumb">
-          <img src="assets/TROCA DE OLHO.webp" alt="Troca de óleo do câmbio automático">
+      <div class="ajf-services-wrap">
+        <div class="ajf-services-top">
+          <h2 class="ajf-services-title">
+            NOSSOS <span>SERVIÇOS</span>
+          </h2>
         </div>
 
-        <div class="ajf-service-content">
-          <h3>
-            <span class="green">Troca de óleo</span><br>
-            do câmbio automático
-          </h3>
+        <div class="ajf-services-grid">
+          <article class="ajf-service-card">
+            <div class="ajf-service-thumb">
+              <img src="assets/TROCA DE OLHO.webp" alt="Troca de óleo do câmbio automático">
+            </div>
 
-          <p>
-            realizada de forma correta, sem riscos para o sistema.
-          </p>
+            <div class="ajf-service-content">
+              <h3>
+                <span class="green">Troca de óleo</span><br>
+                do câmbio automático
+              </h3>
+
+              <p>
+                realizada de forma correta, sem riscos para o sistema.
+              </p>
+            </div>
+          </article>
+
+          <article class="ajf-service-card">
+            <div class="ajf-service-thumb">
+              <img src="assets/MODULOS ELETRONICOS.webp" alt="Reparo de módulos eletrônicos">
+            </div>
+
+            <div class="ajf-service-content">
+              <h3>
+                Reparo de <span class="green">módulos eletrônicos</span>
+              </h3>
+
+              <p>
+                desmontagem, análise e substituição de componentes defeituosos.
+              </p>
+            </div>
+          </article>
+
+          <article class="ajf-service-card">
+            <div class="ajf-service-thumb">
+              <img src="assets/DESEMPENHO.webp" alt="Testes de desempenho">
+            </div>
+
+            <div class="ajf-service-content">
+              <h3>
+                Testes de <span class="green">desempenho</span>
+              </h3>
+
+              <p>
+                garantimos que tudo esteja funcionando antes da entrega.
+              </p>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
+    </section>
+  </main>
 
-      <article class="ajf-service-card">
-        <div class="ajf-service-thumb">
-          <img src="assets/MODULOS ELETRONICOS.webp" alt="Reparo de módulos eletrônicos">
-        </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-nav a');
+      const serviceCards = document.querySelectorAll('.ajf-service-card');
 
-        <div class="ajf-service-content">
-          <h3>
-            Reparo de <span class="green">módulos eletrônicos</span>
-          </h3>
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function () {
+          const isOpen = mobileMenu.classList.toggle('open');
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
 
-          <p>
-            desmontagem, análise e substituição de componentes defeituosos.
-          </p>
-        </div>
-      </article>
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
 
-      <article class="ajf-service-card">
-        <div class="ajf-service-thumb">
-          <img src="assets/DESEMPENHO.webp" alt="Testes de desempenho">
-        </div>
+      serviceCards.forEach(card => {
+        card.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) {
+            const isActive = this.classList.contains('active');
+            serviceCards.forEach(item => item.classList.remove('active'));
+            if (!isActive) this.classList.add('active');
+          }
+        });
+      });
 
-        <div class="ajf-service-content">
-          <h3>
-            Testes de <span class="green">desempenho</span>
-          </h3>
-
-          <p>
-            garantimos que tudo esteja funcionando antes da entrega.
-          </p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<style>
-.ajf-services-sec{
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  background:#000;
-}
-
-.ajf-services-bg,
-.ajf-services-bg picture,
-.ajf-services-bg img,
-.ajf-services-overlay{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-}
-
-.ajf-services-bg img{
-  object-fit:cover;
-  object-position:center center;
-}
-
-.ajf-services-overlay{
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.66) 36%, rgba(0,0,0,.78) 100%),
-    linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 50%, rgba(0,0,0,.18) 100%);
-}
-
-.ajf-services-wrap{
-  position:relative;
-  z-index:2;
-  width:min(calc(100% - 90px), 1420px);
-  margin:0 auto;
-  padding:90px 0 88px;
-}
-
-.ajf-services-top{
-  text-align:center;
-  margin-bottom:78px;
-}
-
-.ajf-services-title{
-  margin:0;
-  font-size:clamp(48px, 4vw, 66px);
-  line-height:.92;
-  color:#fff;
-  text-transform:uppercase;
-}
-
-.ajf-services-title span{
-  color:#19f000;
-}
-
-.ajf-services-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:30px;
-  align-items:start;
-}
-
-.ajf-service-card{
-  position:relative;
-  min-height:470px;
-  padding:88px 26px 28px;
-  border:2px solid #19f000;
-  border-radius:28px;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.50) 52%, rgba(7,56,12,.32) 100%);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  text-align:center;
-  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-  cursor:pointer;
-  overflow:visible;
-}
-
-.ajf-service-card:hover{
-  transform:translateY(-8px) scale(1.02);
-  border-color:#5cff67;
-  box-shadow:
-    0 0 20px rgba(25,240,0,.20),
-    0 0 42px rgba(25,240,0,.12);
-}
-
-.ajf-service-thumb{
-  position:absolute;
-  top:-44px;
-  left:50%;
-  transform:translateX(-50%);
-  width:112px;
-  height:112px;
-  border:2px solid #19f000;
-  border-radius:22px;
-  overflow:hidden;
-  background:#111;
-  transition:transform .28s ease, box-shadow .28s ease;
-}
-
-.ajf-service-card:hover .ajf-service-thumb{
-  transform:translateX(-50%) scale(1.04);
-  box-shadow:
-    0 0 16px rgba(25,240,0,.20),
-    0 0 30px rgba(25,240,0,.12);
-}
-
-.ajf-service-thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.ajf-service-content{
-  padding-top:98px;
-}
-
-.ajf-service-content h3{
-  margin:0;
-  font-size:22px;
-  line-height:1.12;
-  color:#fff;
-}
-
-.ajf-service-content .green{
-  color:#19f000;
-}
-
-.ajf-service-content p{
-  margin:18px auto 0;
-  max-width:300px;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:16px;
-  line-height:1.15;
-  color:rgba(255,255,255,.88);
-  opacity:0;
-  max-height:0;
-  overflow:hidden;
-  transform:translateY(10px);
-  transition:opacity .25s ease, max-height .25s ease, transform .25s ease;
-}
-
-.ajf-service-card:hover .ajf-service-content p{
-  opacity:1;
-  max-height:120px;
-  transform:translateY(0);
-}
-
-/* MOBILE/TABLET */
-@media (max-width: 1024px){
-  .ajf-services-wrap{
-    width:calc(100% - 32px);
-    padding:64px 0 56px;
-  }
-
-  .ajf-services-top{
-    margin-bottom:54px;
-  }
-
-  .ajf-services-title{
-    font-size:clamp(42px, 8vw, 56px);
-  }
-
-  .ajf-services-grid{
-    grid-template-columns:1fr;
-    gap:72px;
-  }
-
-  .ajf-service-card{
-    min-height:auto;
-    padding:78px 22px 24px;
-    border-radius:24px;
-  }
-
-  .ajf-service-thumb{
-    width:102px;
-    height:102px;
-    top:-38px;
-    border-radius:20px;
-  }
-
-  .ajf-service-content{
-    padding-top:70px;
-  }
-
-  .ajf-service-content h3{
-    font-size:26px;
-    line-height:1.06;
-  }
-
-  .ajf-service-content p{
-    margin-top:18px;
-    max-width:260px;
-    font-size:15px;
-    opacity:0;
-    max-height:0;
-    transform:translateY(8px);
-  }
-
-  .ajf-service-card:hover .ajf-service-content p{
-    opacity:0;
-    max-height:0;
-    transform:translateY(8px);
-  }
-
-  .ajf-service-card.active{
-    transform:translateY(-4px);
-    border-color:#5cff67;
-    box-shadow:
-      0 0 18px rgba(25,240,0,.18),
-      0 0 34px rgba(25,240,0,.10);
-  }
-
-  .ajf-service-card.active .ajf-service-thumb{
-    transform:translateX(-50%) scale(1.03);
-    box-shadow:
-      0 0 14px rgba(25,240,0,.18),
-      0 0 26px rgba(25,240,0,.10);
-  }
-
-  .ajf-service-card.active .ajf-service-content p{
-    opacity:1;
-    max-height:120px;
-    transform:translateY(0);
-  }
-}
-
-@media (max-width: 430px){
-  .ajf-services-wrap{
-    width:calc(100% - 24px);
-    padding:56px 0 52px;
-  }
-
-  .ajf-services-top{
-    margin-bottom:48px;
-  }
-
-  .ajf-services-title{
-    font-size:44px;
-  }
-
-  .ajf-services-grid{
-    gap:64px;
-  }
-
-  .ajf-service-card{
-    padding:74px 18px 22px;
-  }
-
-  .ajf-service-thumb{
-    width:94px;
-    height:94px;
-    top:-34px;
-  }
-
-  .ajf-service-content{
-    padding-top:62px;
-  }
-
-  .ajf-service-content h3{
-    font-size:23px;
-  }
-
-  .ajf-service-content p{
-    font-size:14px;
-    max-width:240px;
-  }
-}
-</style>
-
-<script>
-document.querySelectorAll('.ajf-service-card').forEach(card => {
-  card.addEventListener('click', () => {
-    if (window.innerWidth <= 1024) {
-      const isActive = card.classList.contains('active');
-      document.querySelectorAll('.ajf-service-card').forEach(item => item.classList.remove('active'));
-      if (!isActive) card.classList.add('active');
-    }
-  });
-});
-</script>
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1024) {
+          serviceCards.forEach(item => item.classList.remove('active'));
+          if (mobileMenu) {
+            mobileMenu.classList.remove('open');
+          }
+          if (menuToggle) {
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
