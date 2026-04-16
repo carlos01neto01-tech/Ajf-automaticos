@@ -696,250 +696,214 @@
       </div>
     </section>
 
-<!-- =========================
-PARTE 2 AJF
-========================= -->
-<section class="ajf-parte2">
+    <section class="ajf2-sec">
+  <div class="ajf2-ticker">
+    <div class="ajf2-ticker-track">
+      <span>ATENDIMENTO PREMIUM</span>
+      <span class="ajf2-dot">•</span>
+      <span>TRANSPARÊNCIA TOTAL</span>
+      <span class="ajf2-dot">•</span>
+      <span>ALTA PERFORMANCE</span>
+      <span class="ajf2-dot">•</span>
+      <span>DIAGNÓSTICO PRECISO</span>
+      <span class="ajf2-dot">•</span>
+      <span>TECNOLOGIA AVANÇADA</span>
+      <span class="ajf2-dot">•</span>
 
-  <!-- FAIXA CONTÍNUA -->
-  <div class="ajf-faixa-wrap">
-    <div class="ajf-faixa-inner">
-      <div class="ajf-faixa-track">
-        <span>ATENDIMENTO PREMIUM</span>
-        <span class="dot">•</span>
-        <span>TRANSPARÊNCIA TOTAL</span>
-        <span class="dot">•</span>
-        <span>ALTA PERFORMANCE</span>
-        <span class="dot">•</span>
-        <span>DIAGNÓSTICO PRECISO</span>
-        <span class="dot">•</span>
-        <span>TECNOLOGIA AVANÇADA</span>
-        <span class="dot">•</span>
+      <span>ATENDIMENTO PREMIUM</span>
+      <span class="ajf2-dot">•</span>
+      <span>TRANSPARÊNCIA TOTAL</span>
+      <span class="ajf2-dot">•</span>
+      <span>ALTA PERFORMANCE</span>
+      <span class="ajf2-dot">•</span>
+      <span>DIAGNÓSTICO PRECISO</span>
+      <span class="ajf2-dot">•</span>
+      <span>TECNOLOGIA AVANÇADA</span>
+      <span class="ajf2-dot">•</span>
 
-        <span>ATENDIMENTO PREMIUM</span>
-        <span class="dot">•</span>
-        <span>TRANSPARÊNCIA TOTAL</span>
-        <span class="dot">•</span>
-        <span>ALTA PERFORMANCE</span>
-        <span class="dot">•</span>
-        <span>DIAGNÓSTICO PRECISO</span>
-        <span class="dot">•</span>
-        <span>TECNOLOGIA AVANÇADA</span>
-        <span class="dot">•</span>
-      </div>
+      <span>ATENDIMENTO PREMIUM</span>
+      <span class="ajf2-dot">•</span>
+      <span>TRANSPARÊNCIA TOTAL</span>
+      <span class="ajf2-dot">•</span>
+      <span>ALTA PERFORMANCE</span>
+      <span class="ajf2-dot">•</span>
+      <span>DIAGNÓSTICO PRECISO</span>
+      <span class="ajf2-dot">•</span>
+      <span>TECNOLOGIA AVANÇADA</span>
+      <span class="ajf2-dot">•</span>
     </div>
   </div>
 
-  <!-- CARDS -->
-  <div class="ajf-parte2-container">
-    <div class="ajf-parte2-cards">
-
-      <div class="ajf-ajf-card">
-        <div class="ajf-ajf-card-icon">
-          <img src="loupe.png" alt="Diagnóstico de câmbio automático">
+  <div class="ajf2-wrap">
+    <div class="ajf2-grid">
+      <article class="ajf2-card">
+        <div class="ajf2-icon">
+          <img src="URL_DA_IMAGEM_1" alt="Diagnóstico de câmbio automático">
         </div>
         <h3>Diagnóstico de<br>câmbio automático</h3>
-      </div>
+      </article>
 
-      <div class="ajf-ajf-card">
-        <div class="ajf-ajf-card-icon">
-          <img src="revision.webp" alt="Revisão preventiva">
+      <article class="ajf2-card">
+        <div class="ajf2-icon">
+          <img src="URL_DA_IMAGEM_2" alt="Revisão preventiva">
         </div>
         <h3>Revisão preventiva</h3>
-      </div>
+      </article>
 
-      <div class="ajf-ajf-card">
-        <div class="ajf-ajf-card-icon">
-          <img src="satisfacao.webp" alt="Atendimento especializado em veículos premium">
+      <article class="ajf2-card">
+        <div class="ajf2-icon">
+          <img src="URL_DA_IMAGEM_3" alt="Atendimento especializado em veículos premium">
         </div>
         <h3>Atendimento especializado<br>em veículos premium</h3>
-      </div>
-
+      </article>
     </div>
   </div>
-
 </section>
 
 <style>
-/* ===== BLOCO GERAL ===== */
-.ajf-parte2{
-  width: 100%;
-  background: #39ff14;
-  padding: 0 0 70px;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
+.ajf2-sec{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 0 72px !important;
+  background:#32ff0a !important;
+  overflow:hidden !important;
+  position:relative !important;
 }
 
-/* ===== FAIXA CONTÍNUA ===== */
-.ajf-faixa-wrap{
-  width: 100%;
-  background: #000;
-  border-top: 1px solid #00ff66;
-  border-bottom: 1px solid #00ff66;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
+.ajf2-ticker{
+  width:100% !important;
+  background:#000 !important;
+  border-top:1px solid #00ff66 !important;
+  border-bottom:1px solid #00ff66 !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  position:relative !important;
+  z-index:2 !important;
 }
 
-.ajf-faixa-inner{
-  width: 100%;
-  overflow: hidden;
+.ajf2-ticker-track{
+  display:flex !important;
+  align-items:center !important;
+  gap:30px !important;
+  width:max-content !important;
+  white-space:nowrap !important;
+  padding:16px 0 !important;
+  animation:ajf2move 18s linear infinite !important;
 }
 
-.ajf-faixa-track{
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  width: max-content;
-  white-space: nowrap;
-  padding: 16px 0;
-  animation: ajfTicker 18s linear infinite;
-  will-change: transform;
+.ajf2-ticker-track span{
+  display:inline-flex !important;
+  align-items:center !important;
+  color:#00ff66 !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+  letter-spacing:.4px !important;
+  text-transform:uppercase !important;
+  line-height:1 !important;
+  flex:0 0 auto !important;
 }
 
-.ajf-faixa-track span{
-  color: #00ff66;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  line-height: 1;
-  text-transform: uppercase;
-  flex: 0 0 auto;
+.ajf2-dot{
+  font-size:18px !important;
 }
 
-.ajf-faixa-track .dot{
-  font-size: 16px;
-  transform: translateY(-1px);
+@keyframes ajf2move{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-33.333%);}
 }
 
-@keyframes ajfTicker{
-  0%{
-    transform: translateX(0);
-  }
-  100%{
-    transform: translateX(-50%);
-  }
+.ajf2-wrap{
+  width:100% !important;
+  max-width:1100px !important;
+  margin:0 auto !important;
+  padding:42px 20px 0 !important;
+  box-sizing:border-box !important;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
-.ajf-parte2-container{
-  width: 100%;
-  max-width: 980px; /* alinhamento mais próximo do retângulo da primeira sessão */
-  margin: 42px auto 0;
-  padding: 0 20px;
-  box-sizing: border-box;
+.ajf2-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, 1fr) !important;
+  gap:20px !important;
+  align-items:stretch !important;
 }
 
-/* ===== GRID DOS CARDS ===== */
-.ajf-parte2-cards{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: stretch;
+.ajf2-card{
+  min-height:258px !important;
+  background:linear-gradient(180deg,#000000 0%,#001406 42%,#00a31d 100%) !important;
+  border:1.5px solid #f3f3f3 !important;
+  border-radius:20px !important;
+  box-shadow:0 8px 18px rgba(0,0,0,.22), 0 0 18px rgba(0,255,102,.16) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  padding:28px 22px !important;
+  box-sizing:border-box !important;
 }
 
-/* ===== CARD ===== */
-.ajf-ajf-card{
-  min-height: 260px;
-  background: linear-gradient(180deg, #000000 0%, #001507 40%, #009a1e 100%);
-  border: 1.5px solid #f0f0f0;
-  border-radius: 20px;
-  box-shadow:
-    0 0 0 1px rgba(0,255,102,0.18),
-    0 8px 18px rgba(0,0,0,0.22),
-    0 0 20px rgba(0,255,102,0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 28px 22px;
-  text-align: center;
-  box-sizing: border-box;
+.ajf2-icon{
+  width:82px !important;
+  height:82px !important;
+  margin:0 0 20px 0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
 }
 
-.ajf-ajf-card-icon{
-  width: 74px;
-  height: 74px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.ajf2-icon img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  display:block !important;
 }
 
-.ajf-ajf-card-icon img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+.ajf2-card h3{
+  margin:0 !important;
+  color:#fff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  line-height:1.15 !important;
+  max-width:250px !important;
 }
 
-.ajf-ajf-card h3{
-  margin: 0;
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.15;
-  font-weight: 800;
-  max-width: 240px;
-}
-
-/* ===== TABLET ===== */
-@media (max-width: 1024px){
-  .ajf-parte2-container{
-    max-width: 920px;
-  }
-
-  .ajf-ajf-card{
-    min-height: 240px;
-    padding: 24px 18px;
-  }
-
-  .ajf-ajf-card h3{
-    font-size: 17px;
-  }
-}
-
-/* ===== MOBILE ===== */
 @media (max-width: 767px){
-  .ajf-parte2{
-    padding: 0 0 50px;
+  .ajf2-sec{
+    padding:0 0 52px !important;
   }
 
-  .ajf-faixa-track{
-    gap: 22px;
-    padding: 14px 0;
-    animation: ajfTicker 14s linear infinite;
+  .ajf2-ticker-track{
+    gap:22px !important;
+    padding:14px 0 !important;
+    animation:ajf2move 14s linear infinite !important;
   }
 
-  .ajf-faixa-track span{
-    font-size: 12px;
+  .ajf2-ticker-track span{
+    font-size:12px !important;
   }
 
-  .ajf-parte2-container{
-    margin-top: 26px;
-    padding: 0 16px;
+  .ajf2-wrap{
+    padding:26px 16px 0 !important;
   }
 
-  .ajf-parte2-cards{
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .ajf2-grid{
+    grid-template-columns:1fr !important;
+    gap:20px !important;
   }
 
-  .ajf-ajf-card{
-    min-height: 250px;
-    border-radius: 20px;
-    padding: 26px 20px;
+  .ajf2-card{
+    min-height:250px !important;
+    padding:26px 20px !important;
   }
 
-  .ajf-ajf-card-icon{
-    width: 82px;
-    height: 82px;
-    margin-bottom: 18px;
+  .ajf2-icon{
+    width:84px !important;
+    height:84px !important;
   }
 
-  .ajf-ajf-card h3{
-    font-size: 17px;
-    max-width: 250px;
+  .ajf2-card h3{
+    font-size:17px !important;
   }
 }
 </style>
+
