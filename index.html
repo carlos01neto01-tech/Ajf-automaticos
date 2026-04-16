@@ -1346,9 +1346,6 @@
         });
       });
     }
-  </script>
-</body>
-</html>
 <section class="ajf-services-sec" id="servicos">
   <div class="ajf-services-bg">
     <picture>
@@ -1457,7 +1454,7 @@
 
 .ajf-services-overlay{
   background:
-    linear-gradient(180deg, rgba(0,0,0,.50) 0%, rgba(0,0,0,.58) 30%, rgba(0,0,0,.66) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.54) 0%, rgba(0,0,0,.62) 28%, rgba(0,0,0,.72) 100%),
     linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.12) 48%, rgba(0,0,0,.28) 100%);
 }
 
@@ -1466,7 +1463,7 @@
   z-index:2;
   width:min(calc(100% - 120px), 1520px);
   margin:0 auto;
-  padding:96px 0 92px;
+  padding:108px 0 96px;
 }
 
 .ajf-services-top{
@@ -1475,7 +1472,7 @@
   display:flex;
   align-items:flex-start;
   justify-content:center;
-  margin-bottom:48px;
+  margin-bottom:86px; /* mais respiro entre título da seção e cards */
 }
 
 .ajf-services-title{
@@ -1534,7 +1531,7 @@
 .ajf-service-card{
   position:relative;
   min-height:640px;
-  padding:78px 34px 34px;
+  padding:96px 34px 34px; /* mais espaço no topo do card */
   border-radius:32px;
   border:2px solid rgba(25,240,0,.82);
   background:
@@ -1550,6 +1547,7 @@
     transform .28s ease,
     box-shadow .28s ease,
     border-color .28s ease;
+  cursor:pointer;
 }
 
 .ajf-service-card:hover{
@@ -1601,7 +1599,7 @@
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding-top:76px;
+  padding-top:108px; /* afasta o título da borda superior do card */
 }
 
 .ajf-service-content h3{
@@ -1618,7 +1616,7 @@
 }
 
 .ajf-service-content p{
-  margin:36px 0 0;
+  margin:34px 0 0;
   max-width:520px;
   color:rgba(255,255,255,.88);
   font-family:Arial, Helvetica, sans-serif;
@@ -1626,22 +1624,54 @@
   line-height:1.04;
   letter-spacing:-0.3px;
   opacity:0;
+  max-height:0;
+  overflow:hidden;
   transform:translateY(14px);
   transition:
     opacity .28s ease,
-    transform .28s ease;
+    transform .28s ease,
+    max-height .28s ease;
 }
 
 .ajf-service-card:hover .ajf-service-content p{
   opacity:1;
+  max-height:180px;
   transform:translateY(0);
+}
+
+/* estado aberto para mobile */
+.ajf-service-card.is-open .ajf-service-content p{
+  opacity:1;
+  max-height:180px;
+  transform:translateY(0);
+}
+
+.ajf-service-card.is-open{
+  transform:translateY(-4px) scale(1.01);
+  border-color:#69ff73;
+  box-shadow:
+    inset 0 0 110px rgba(25,240,0,.12),
+    0 0 20px rgba(25,240,0,.22),
+    0 0 44px rgba(25,240,0,.16);
+}
+
+.ajf-service-card.is-open .ajf-service-thumb{
+  transform:translateX(-50%) scale(1.04);
+  border-color:#74ff7d;
+  box-shadow:
+    0 0 18px rgba(25,240,0,.22),
+    0 0 34px rgba(25,240,0,.16);
 }
 
 /* NOTEBOOK */
 @media (max-width:1366px){
   .ajf-services-wrap{
     width:min(calc(100% - 80px), 1420px);
-    padding:82px 0 82px;
+    padding:88px 0 84px;
+  }
+
+  .ajf-services-top{
+    margin-bottom:74px;
   }
 
   .ajf-services-grid{
@@ -1650,7 +1680,7 @@
 
   .ajf-service-card{
     min-height:590px;
-    padding:74px 28px 30px;
+    padding:90px 28px 30px;
   }
 
   .ajf-service-thumb{
@@ -1660,7 +1690,7 @@
   }
 
   .ajf-service-content{
-    padding-top:66px;
+    padding-top:94px;
   }
 
   .ajf-service-content h3{
@@ -1676,11 +1706,11 @@
 @media (max-width:1024px){
   .ajf-services-wrap{
     width:min(calc(100% - 44px), 1200px);
-    padding:72px 0 72px;
+    padding:76px 0 76px;
   }
 
   .ajf-services-top{
-    margin-bottom:34px;
+    margin-bottom:58px;
   }
 
   .ajf-services-title{
@@ -1701,7 +1731,7 @@
     max-width:760px;
     width:100%;
     margin:0 auto;
-    padding:72px 28px 28px;
+    padding:84px 28px 28px;
   }
 
   .ajf-service-thumb{
@@ -1711,7 +1741,7 @@
   }
 
   .ajf-service-content{
-    padding-top:58px;
+    padding-top:84px;
   }
 
   .ajf-service-content h3{
@@ -1719,11 +1749,18 @@
   }
 
   .ajf-service-content p{
-    opacity:1;
-    transform:none;
-    margin-top:28px;
+    margin-top:24px;
     font-size:21px;
     max-width:480px;
+    opacity:0;
+    max-height:0;
+    transform:translateY(14px);
+  }
+
+  .ajf-service-card:hover .ajf-service-content p{
+    opacity:0;
+    max-height:0;
+    transform:translateY(14px);
   }
 }
 
@@ -1731,11 +1768,11 @@
 @media (max-width:767px){
   .ajf-services-wrap{
     width:calc(100% - 32px);
-    padding:54px 0 58px;
+    padding:58px 0 58px;
   }
 
   .ajf-services-top{
-    margin-bottom:28px;
+    margin-bottom:54px; /* respiro maior */
   }
 
   .ajf-services-title{
@@ -1750,7 +1787,7 @@
   .ajf-service-card{
     min-height:370px;
     border-radius:28px;
-    padding:62px 24px 24px;
+    padding:76px 24px 24px;
   }
 
   .ajf-service-thumb{
@@ -1761,7 +1798,7 @@
   }
 
   .ajf-service-content{
-    padding-top:44px;
+    padding-top:76px;
   }
 
   .ajf-service-content h3{
@@ -1770,12 +1807,13 @@
   }
 
   .ajf-service-content p{
-    opacity:1;
-    transform:none;
-    margin-top:24px;
+    margin-top:22px;
     font-size:17px;
     line-height:1.04;
     max-width:280px;
+    opacity:0;
+    max-height:0;
+    transform:translateY(12px);
   }
 }
 
@@ -1783,7 +1821,11 @@
 @media (max-width:430px){
   .ajf-services-wrap{
     width:calc(100% - 24px);
-    padding:48px 0 54px;
+    padding:52px 0 54px;
+  }
+
+  .ajf-services-top{
+    margin-bottom:48px;
   }
 
   .ajf-services-title{
@@ -1796,7 +1838,7 @@
 
   .ajf-service-card{
     min-height:350px;
-    padding:58px 20px 22px;
+    padding:72px 20px 22px;
   }
 
   .ajf-service-thumb{
@@ -1806,7 +1848,7 @@
   }
 
   .ajf-service-content{
-    padding-top:42px;
+    padding-top:68px;
   }
 
   .ajf-service-content h3{
@@ -1819,3 +1861,36 @@
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const serviceCards = document.querySelectorAll('.ajf-service-card');
+
+  function enableMobileAccordion() {
+    if (window.innerWidth <= 1024) {
+      serviceCards.forEach((card) => {
+        if (!card.dataset.bound) {
+          card.dataset.bound = 'true';
+          card.addEventListener('click', function () {
+            const isOpen = this.classList.contains('is-open');
+
+            serviceCards.forEach((item) => item.classList.remove('is-open'));
+
+            if (!isOpen) {
+              this.classList.add('is-open');
+            }
+          });
+        }
+      });
+    }
+  }
+
+  enableMobileAccordion();
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1024) {
+      serviceCards.forEach((card) => card.classList.remove('is-open'));
+    }
+  });
+});
+</script>
