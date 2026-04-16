@@ -1746,7 +1746,10 @@
 <section class="ajf-services-sec" id="servicos">
 
   <div class="ajf-services-bg">
-    <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
+      <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="">
+    </picture>
     <div class="ajf-services-overlay"></div>
   </div>
 
@@ -1760,10 +1763,9 @@
 
     <div class="ajf-services-grid">
 
-      <!-- CARD 1 -->
-      <div class="ajf-service-card">
+      <article class="ajf-service-card">
         <div class="ajf-service-thumb">
-          <img src="assets/TROCA DE OLHO.webp">
+          <img src="assets/TROCA DE OLHO.webp" alt="Troca de óleo do câmbio automático">
         </div>
 
         <div class="ajf-service-content">
@@ -1776,12 +1778,11 @@
             realizada de forma correta, sem riscos para o sistema.
           </p>
         </div>
-      </div>
+      </article>
 
-      <!-- CARD 2 -->
-      <div class="ajf-service-card">
+      <article class="ajf-service-card">
         <div class="ajf-service-thumb">
-          <img src="assets/MODULOS ELETRONICOS.webp">
+          <img src="assets/MODULOS ELETRONICOS.webp" alt="Reparo de módulos eletrônicos">
         </div>
 
         <div class="ajf-service-content">
@@ -1793,12 +1794,11 @@
             desmontagem, análise e substituição de componentes defeituosos.
           </p>
         </div>
-      </div>
+      </article>
 
-      <!-- CARD 3 -->
-      <div class="ajf-service-card">
+      <article class="ajf-service-card">
         <div class="ajf-service-thumb">
-          <img src="assets/DESEMPENHO.webp">
+          <img src="assets/DESEMPENHO.webp" alt="Testes de desempenho">
         </div>
 
         <div class="ajf-service-content">
@@ -1810,101 +1810,116 @@
             garantimos que tudo esteja funcionando antes da entrega.
           </p>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
 </section>
 
 <style>
-
-/* FUNDO */
 .ajf-services-sec{
   position:relative;
   width:100%;
   overflow:hidden;
+  background:#000;
 }
 
-.ajf-services-bg{
-  position:absolute;
-  inset:0;
-}
-
-.ajf-services-bg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
+.ajf-services-bg,
+.ajf-services-bg picture,
+.ajf-services-bg img,
 .ajf-services-overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.75);
+  width:100%;
+  height:100%;
 }
 
-/* CONTEÚDO */
+.ajf-services-bg img{
+  object-fit:cover;
+  object-position:center center;
+}
+
+.ajf-services-overlay{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.66) 36%, rgba(0,0,0,.78) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.10) 50%, rgba(0,0,0,.18) 100%);
+}
+
 .ajf-services-wrap{
   position:relative;
   z-index:2;
-  width:90%;
-  max-width:1300px;
-  margin:auto;
-  padding:120px 0;
+  width:min(calc(100% - 90px), 1420px);
+  margin:0 auto;
+  padding:90px 0 88px;
 }
 
-/* TÍTULO */
 .ajf-services-top{
   text-align:center;
-  margin-bottom:100px;
+  margin-bottom:78px;
 }
 
 .ajf-services-title{
-  font-size:60px;
+  margin:0;
+  font-size:clamp(48px, 4vw, 66px);
+  line-height:.92;
   color:#fff;
+  text-transform:uppercase;
 }
 
 .ajf-services-title span{
   color:#19f000;
 }
 
-/* GRID */
 .ajf-services-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:30px;
+  align-items:start;
 }
 
-/* CARD */
 .ajf-service-card{
   position:relative;
-  height:320px;
-  padding:90px 25px 35px;
+  min-height:470px;
+  padding:88px 26px 28px;
   border:2px solid #19f000;
-  border-radius:26px;
+  border-radius:28px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.50) 52%, rgba(7,56,12,.32) 100%);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  transition:.3s;
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
   cursor:pointer;
+  overflow:visible;
 }
 
 .ajf-service-card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 30px #19f000;
+  transform:translateY(-8px) scale(1.02);
+  border-color:#5cff67;
+  box-shadow:
+    0 0 20px rgba(25,240,0,.20),
+    0 0 42px rgba(25,240,0,.12);
 }
 
-/* IMAGEM */
 .ajf-service-thumb{
   position:absolute;
-  top:-45px;
+  top:-44px;
   left:50%;
   transform:translateX(-50%);
-  width:110px;
-  height:110px;
+  width:112px;
+  height:112px;
   border:2px solid #19f000;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
+  background:#111;
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+
+.ajf-service-card:hover .ajf-service-thumb{
+  transform:translateX(-50%) scale(1.04);
+  box-shadow:
+    0 0 16px rgba(25,240,0,.20),
+    0 0 30px rgba(25,240,0,.12);
 }
 
 .ajf-service-thumb img{
@@ -1913,81 +1928,170 @@
   object-fit:cover;
 }
 
-/* TEXTO */
 .ajf-service-content{
-  margin-top:20px;
+  padding-top:98px;
 }
 
 .ajf-service-content h3{
-  font-size:24px;
+  margin:0;
+  font-size:22px;
+  line-height:1.12;
   color:#fff;
-  line-height:1.3;
 }
 
-.green{
+.ajf-service-content .green{
   color:#19f000;
 }
 
-/* DESCRIÇÃO */
 .ajf-service-content p{
-  margin-top:15px;
+  margin:18px auto 0;
+  max-width:300px;
+  font-family:Arial, Helvetica, sans-serif;
   font-size:16px;
+  line-height:1.15;
+  color:rgba(255,255,255,.88);
   opacity:0;
   max-height:0;
   overflow:hidden;
-  transition:.3s;
+  transform:translateY(10px);
+  transition:opacity .25s ease, max-height .25s ease, transform .25s ease;
 }
 
-.ajf-service-card:hover p{
+.ajf-service-card:hover .ajf-service-content p{
   opacity:1;
   max-height:120px;
+  transform:translateY(0);
 }
 
-/* MOBILE */
-@media(max-width:768px){
+/* MOBILE/TABLET */
+@media (max-width: 1024px){
+  .ajf-services-wrap{
+    width:calc(100% - 32px);
+    padding:64px 0 56px;
+  }
 
-  .ajf-services-grid{
-    grid-template-columns:1fr;
-    gap:60px;
+  .ajf-services-top{
+    margin-bottom:54px;
   }
 
   .ajf-services-title{
-    font-size:40px;
+    font-size:clamp(42px, 8vw, 56px);
+  }
+
+  .ajf-services-grid{
+    grid-template-columns:1fr;
+    gap:72px;
   }
 
   .ajf-service-card{
-    height:auto;
-    padding:80px 20px 25px;
+    min-height:auto;
+    padding:78px 22px 24px;
+    border-radius:24px;
   }
 
   .ajf-service-thumb{
-    width:90px;
-    height:90px;
-    top:-40px;
+    width:102px;
+    height:102px;
+    top:-38px;
+    border-radius:20px;
+  }
+
+  .ajf-service-content{
+    padding-top:70px;
   }
 
   .ajf-service-content h3{
-    font-size:20px;
+    font-size:26px;
+    line-height:1.06;
   }
 
   .ajf-service-content p{
+    margin-top:18px;
+    max-width:260px;
+    font-size:15px;
     opacity:0;
     max-height:0;
+    transform:translateY(8px);
   }
 
-  .ajf-service-card.active p{
+  .ajf-service-card:hover .ajf-service-content p{
+    opacity:0;
+    max-height:0;
+    transform:translateY(8px);
+  }
+
+  .ajf-service-card.active{
+    transform:translateY(-4px);
+    border-color:#5cff67;
+    box-shadow:
+      0 0 18px rgba(25,240,0,.18),
+      0 0 34px rgba(25,240,0,.10);
+  }
+
+  .ajf-service-card.active .ajf-service-thumb{
+    transform:translateX(-50%) scale(1.03);
+    box-shadow:
+      0 0 14px rgba(25,240,0,.18),
+      0 0 26px rgba(25,240,0,.10);
+  }
+
+  .ajf-service-card.active .ajf-service-content p{
     opacity:1;
-    max-height:150px;
+    max-height:120px;
+    transform:translateY(0);
   }
 }
 
+@media (max-width: 430px){
+  .ajf-services-wrap{
+    width:calc(100% - 24px);
+    padding:56px 0 52px;
+  }
+
+  .ajf-services-top{
+    margin-bottom:48px;
+  }
+
+  .ajf-services-title{
+    font-size:44px;
+  }
+
+  .ajf-services-grid{
+    gap:64px;
+  }
+
+  .ajf-service-card{
+    padding:74px 18px 22px;
+  }
+
+  .ajf-service-thumb{
+    width:94px;
+    height:94px;
+    top:-34px;
+  }
+
+  .ajf-service-content{
+    padding-top:62px;
+  }
+
+  .ajf-service-content h3{
+    font-size:23px;
+  }
+
+  .ajf-service-content p{
+    font-size:14px;
+    max-width:240px;
+  }
+}
 </style>
 
 <script>
-document.querySelectorAll('.ajf-service-card').forEach(card=>{
-  card.addEventListener('click',()=>{
-    if(window.innerWidth <= 768){
-      card.classList.toggle('active');
+document.querySelectorAll('.ajf-service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    if (window.innerWidth <= 1024) {
+      const isActive = card.classList.contains('active');
+      document.querySelectorAll('.ajf-service-card').forEach(item => item.classList.remove('active'));
+      if (!isActive) card.classList.add('active');
     }
   });
 });
