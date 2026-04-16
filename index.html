@@ -696,57 +696,61 @@
       </div>
     </section>
 
-   <!-- PARTE 2 AJF -->
+<!-- =========================
+PARTE 2 AJF
+========================= -->
 <section class="ajf-parte2">
 
   <!-- FAIXA CONTÍNUA -->
-  <div class="ajf-faixa-topo">
-    <div class="ajf-faixa-track">
-      <span>ATENDIMENTO PREMIUM</span>
-      <span>•</span>
-      <span>TRANSPARÊNCIA TOTAL</span>
-      <span>•</span>
-      <span>ALTA PERFORMANCE</span>
-      <span>•</span>
-      <span>DIAGNÓSTICO PRECISO</span>
-      <span>•</span>
-      <span>TECNOLOGIA AVANÇADA</span>
-      <span>•</span>
+  <div class="ajf-faixa-wrap">
+    <div class="ajf-faixa-inner">
+      <div class="ajf-faixa-track">
+        <span>ATENDIMENTO PREMIUM</span>
+        <span class="dot">•</span>
+        <span>TRANSPARÊNCIA TOTAL</span>
+        <span class="dot">•</span>
+        <span>ALTA PERFORMANCE</span>
+        <span class="dot">•</span>
+        <span>DIAGNÓSTICO PRECISO</span>
+        <span class="dot">•</span>
+        <span>TECNOLOGIA AVANÇADA</span>
+        <span class="dot">•</span>
 
-      <span>ATENDIMENTO PREMIUM</span>
-      <span>•</span>
-      <span>TRANSPARÊNCIA TOTAL</span>
-      <span>•</span>
-      <span>ALTA PERFORMANCE</span>
-      <span>•</span>
-      <span>DIAGNÓSTICO PRECISO</span>
-      <span>•</span>
-      <span>TECNOLOGIA AVANÇADA</span>
-      <span>•</span>
+        <span>ATENDIMENTO PREMIUM</span>
+        <span class="dot">•</span>
+        <span>TRANSPARÊNCIA TOTAL</span>
+        <span class="dot">•</span>
+        <span>ALTA PERFORMANCE</span>
+        <span class="dot">•</span>
+        <span>DIAGNÓSTICO PRECISO</span>
+        <span class="dot">•</span>
+        <span>TECNOLOGIA AVANÇADA</span>
+        <span class="dot">•</span>
+      </div>
     </div>
   </div>
 
-  <!-- CONTEÚDO -->
+  <!-- CARDS -->
   <div class="ajf-parte2-container">
     <div class="ajf-parte2-cards">
 
-      <div class="ajf-card-ajf">
-        <div class="ajf-card-icon">
-          <img src="lupa-diagnostico.webp" alt="Diagnóstico de câmbio automático">
+      <div class="ajf-ajf-card">
+        <div class="ajf-ajf-card-icon">
+          <img src="loupe.png" alt="Diagnóstico de câmbio automático">
         </div>
         <h3>Diagnóstico de<br>câmbio automático</h3>
       </div>
 
-      <div class="ajf-card-ajf">
-        <div class="ajf-card-icon">
-          <img src="revisao-preventiva.webp" alt="Revisão preventiva">
+      <div class="ajf-ajf-card">
+        <div class="ajf-ajf-card-icon">
+          <img src="revision.webp" alt="Revisão preventiva">
         </div>
         <h3>Revisão preventiva</h3>
       </div>
 
-      <div class="ajf-card-ajf">
-        <div class="ajf-card-icon">
-          <img src="atendimento-premium.webp" alt="Atendimento especializado em veículos premium">
+      <div class="ajf-ajf-card">
+        <div class="ajf-ajf-card-icon">
+          <img src="satisfacao.webp" alt="Atendimento especializado em veículos premium">
         </div>
         <h3>Atendimento especializado<br>em veículos premium</h3>
       </div>
@@ -757,51 +761,59 @@
 </section>
 
 <style>
-/* ==========================
-   PARTE 2 AJF
-========================== */
+/* ===== BLOCO GERAL ===== */
 .ajf-parte2{
-  position: relative;
   width: 100%;
   background: #39ff14;
-  padding: 0;
+  padding: 0 0 70px;
+  margin: 0;
   overflow: hidden;
+  position: relative;
 }
 
-/* FAIXA NO TOPO DA SESSÃO */
-.ajf-faixa-topo{
-  position: relative;
+/* ===== FAIXA CONTÍNUA ===== */
+.ajf-faixa-wrap{
   width: 100%;
   background: #000;
   border-top: 1px solid #00ff66;
   border-bottom: 1px solid #00ff66;
   overflow: hidden;
+  position: relative;
   z-index: 2;
-  margin: 0;
+}
+
+.ajf-faixa-inner{
+  width: 100%;
+  overflow: hidden;
 }
 
 .ajf-faixa-track{
   display: flex;
   align-items: center;
-  gap: 34px;
-  white-space: nowrap;
+  gap: 28px;
   width: max-content;
-  min-width: 200%;
+  white-space: nowrap;
   padding: 16px 0;
-  animation: ajfFaixaMove 22s linear infinite;
+  animation: ajfTicker 18s linear infinite;
+  will-change: transform;
 }
 
 .ajf-faixa-track span{
   color: #00ff66;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   line-height: 1;
+  text-transform: uppercase;
   flex: 0 0 auto;
 }
 
-@keyframes ajfFaixaMove{
+.ajf-faixa-track .dot{
+  font-size: 16px;
+  transform: translateY(-1px);
+}
+
+@keyframes ajfTicker{
   0%{
     transform: translateX(0);
   }
@@ -810,134 +822,123 @@
   }
 }
 
-/* ÁREA DOS CARDS */
+/* ===== CONTAINER PRINCIPAL ===== */
 .ajf-parte2-container{
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 56px 24px 78px;
-  display: flex;
-  justify-content: center;
+  max-width: 980px; /* alinhamento mais próximo do retângulo da primeira sessão */
+  margin: 42px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
+/* ===== GRID DOS CARDS ===== */
 .ajf-parte2-cards{
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 
-/* CARD */
-.ajf-card-ajf{
-  position: relative;
-  min-height: 370px;
-  background: linear-gradient(180deg, #000000 0%, #001f08 38%, #00a51f 100%);
-  border: 1.5px solid #f2f2f2;
-  border-radius: 22px;
+/* ===== CARD ===== */
+.ajf-ajf-card{
+  min-height: 260px;
+  background: linear-gradient(180deg, #000000 0%, #001507 40%, #009a1e 100%);
+  border: 1.5px solid #f0f0f0;
+  border-radius: 20px;
   box-shadow:
-    0 0 0 1px rgba(0,255,102,0.25),
-    0 10px 22px rgba(0,0,0,0.28),
-    0 0 18px rgba(0,255,102,0.18);
+    0 0 0 1px rgba(0,255,102,0.18),
+    0 8px 18px rgba(0,0,0,0.22),
+    0 0 20px rgba(0,255,102,0.12);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 34px 28px;
+  align-items: center;
+  padding: 28px 22px;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.ajf-card-icon{
-  width: 96px;
-  height: 96px;
+.ajf-ajf-card-icon{
+  width: 74px;
+  height: 74px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
 }
 
-.ajf-card-icon img{
-  max-width: 100%;
-  max-height: 100%;
+.ajf-ajf-card-icon img{
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
 
-.ajf-card-ajf h3{
+.ajf-ajf-card h3{
   margin: 0;
-  color: #ffffff;
-  font-size: 23px;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.3px;
-  max-width: 290px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 800;
+  max-width: 240px;
 }
 
-/* DESKTOP MAIOR */
-@media (min-width: 1440px){
-  .ajf-parte2-container{
-    padding: 62px 36px 86px;
-  }
-
-  .ajf-card-ajf{
-    min-height: 390px;
-  }
-
-  .ajf-card-ajf h3{
-    font-size: 25px;
-  }
-}
-
-/* TABLET */
+/* ===== TABLET ===== */
 @media (max-width: 1024px){
-  .ajf-parte2-cards{
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  .ajf-parte2-container{
+    max-width: 920px;
   }
 
-  .ajf-card-ajf{
-    min-height: 340px;
+  .ajf-ajf-card{
+    min-height: 240px;
+    padding: 24px 18px;
   }
 
-  .ajf-card-ajf h3{
-    font-size: 21px;
+  .ajf-ajf-card h3{
+    font-size: 17px;
   }
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width: 767px){
+  .ajf-parte2{
+    padding: 0 0 50px;
+  }
+
   .ajf-faixa-track{
-    gap: 24px;
+    gap: 22px;
     padding: 14px 0;
+    animation: ajfTicker 14s linear infinite;
   }
 
   .ajf-faixa-track span{
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .ajf-parte2-container{
-    padding: 26px 18px 54px;
+    margin-top: 26px;
+    padding: 0 16px;
   }
 
   .ajf-parte2-cards{
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 20px;
   }
 
-  .ajf-card-ajf{
-    min-height: 300px;
+  .ajf-ajf-card{
+    min-height: 250px;
     border-radius: 20px;
-    padding: 30px 22px;
+    padding: 26px 20px;
   }
 
-  .ajf-card-icon{
-    width: 84px;
-    height: 84px;
-    margin-bottom: 22px;
+  .ajf-ajf-card-icon{
+    width: 82px;
+    height: 82px;
+    margin-bottom: 18px;
   }
 
-  .ajf-card-ajf h3{
-    font-size: 18px;
-    line-height: 1.05;
+  .ajf-ajf-card h3{
+    font-size: 17px;
     max-width: 250px;
   }
 }
