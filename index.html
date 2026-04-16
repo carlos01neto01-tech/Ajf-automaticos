@@ -1743,128 +1743,226 @@
       </div>
     </section>
 
-    <section class="ajf-services-sec" id="servicos">
-      <div class="ajf-services-bg">
-        <picture>
-          <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
-          <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="Ambiente interno da oficina AJF">
-        </picture>
-        <div class="ajf-services-overlay"></div>
-      </div>
+ <section class="ajf-services-sec" id="servicos">
+  <div class="ajf-services-bg">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
+      <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="Ambiente interno da oficina AJF">
+    </picture>
+    <div class="ajf-services-overlay"></div>
+  </div>
 
-      <div class="ajf-services-wrap">
-        <div class="ajf-services-top">
-          <h2 class="ajf-services-title">
-            NOSSOS <span>SERVIÇOS</span>
-          </h2>
+  <div class="ajf-services-wrap">
+    <div class="ajf-services-top">
+      <h2 class="ajf-services-title">
+        NOSSOS <span>SERVIÇOS</span>
+      </h2>
+    </div>
 
-  
-
-        <div class="ajf-services-grid">
-          <article class="ajf-service-card" tabindex="0">
-            <div class="ajf-service-thumb">
-              <img src="assets/TROCA DE OLHO.webp" alt="Troca de óleo do câmbio automático">
-            </div>
-
-            <div class="ajf-service-content">
-              <h3>
-                <span class="green">Troca de óleo</span> do<br>
-                câmbio automático
-              </h3>
-
-              <p>
-                realizada de forma correta, sem riscos para o sistema.
-              </p>
-            </div>
-          </article>
-
-          <article class="ajf-service-card" tabindex="0">
-            <div class="ajf-service-thumb">
-              <img src="assets/MODULOS ELETRONICOS.webp" alt="Reparo de módulos eletrônicos">
-            </div>
-
-            <div class="ajf-service-content">
-              <h3>
-                Reparo de <span class="green">módulos<br>eletrônicos</span>
-              </h3>
-
-              <p>
-                desmontagem, análise e substituição de componentes defeituosos.
-              </p>
-            </div>
-          </article>
-
-          <article class="ajf-service-card" tabindex="0">
-            <div class="ajf-service-thumb">
-              <img src="assets/DESEMPENHO.webp" alt="Testes de desempenho">
-            </div>
-
-            <div class="ajf-service-content">
-              <h3>
-                Testes de<br>
-                <span class="green">desempenho</span>
-              </h3>
-
-              <p>
-                garantimos que tudo esteja funcionando antes da entrega.
-              </p>
-            </div>
-          </article>
+    <div class="ajf-services-grid">
+      
+      <article class="ajf-service-card">
+        <div class="ajf-service-thumb">
+          <img src="assets/TROCA DE OLHO.webp">
         </div>
-      </div>
-    </section>
-  </main>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        <div class="ajf-service-content">
+          <h3>
+            <span class="green">Troca de óleo</span><br>
+            do câmbio automático
+          </h3>
 
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
+          <p>
+            realizada de forma correta, sem riscos para o sistema.
+          </p>
+        </div>
+      </article>
 
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
+      <article class="ajf-service-card">
+        <div class="ajf-service-thumb">
+          <img src="assets/MODULOS ELETRONICOS.webp">
+        </div>
+
+        <div class="ajf-service-content">
+          <h3>
+            Reparo de <span class="green">módulos eletrônicos</span>
+          </h3>
+
+          <p>
+            desmontagem, análise e substituição de componentes defeituosos.
+          </p>
+        </div>
+      </article>
+
+      <article class="ajf-service-card">
+        <div class="ajf-service-thumb">
+          <img src="assets/DESEMPENHO.webp">
+        </div>
+
+        <div class="ajf-service-content">
+          <h3>
+            Testes de <span class="green">desempenho</span>
+          </h3>
+
+          <p>
+            garantimos que tudo esteja funcionando antes da entrega.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ================= SERVIÇOS ================= */
+
+.ajf-services-sec{
+  position:relative;
+  width:100%;
+  background:#000;
+}
+
+.ajf-services-bg,
+.ajf-services-bg img,
+.ajf-services-overlay{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.ajf-services-bg img{
+  object-fit:cover;
+}
+
+.ajf-services-overlay{
+  background:rgba(0,0,0,.7);
+}
+
+.ajf-services-wrap{
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+  padding:120px 0;
+}
+
+.ajf-services-top{
+  text-align:center;
+  margin-bottom:120px; /* RESPIRO AJUSTADO */
+}
+
+.ajf-services-title{
+  font-size:64px;
+  color:#fff;
+}
+
+.ajf-services-title span{
+  color:#19f000;
+}
+
+.ajf-services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.ajf-service-card{
+  position:relative;
+  padding:120px 30px 40px;
+  border:2px solid #19f000;
+  border-radius:30px;
+  text-align:center;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.ajf-service-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px #19f000;
+}
+
+.ajf-service-thumb{
+  position:absolute;
+  top:-60px;
+  left:50%;
+  transform:translateX(-50%);
+  width:150px;
+  height:150px;
+  border:2px solid #19f000;
+  border-radius:25px;
+  overflow:hidden;
+}
+
+.ajf-service-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.ajf-service-content{
+  margin-top:60px;
+}
+
+.ajf-service-content h3{
+  font-size:32px;
+  color:#fff;
+}
+
+.green{
+  color:#19f000;
+}
+
+.ajf-service-content p{
+  margin-top:25px;
+  font-size:20px;
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.ajf-service-card:hover p{
+  opacity:1;
+  max-height:200px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .ajf-services-grid{
+    grid-template-columns:1fr;
+    gap:80px;
+  }
+
+  .ajf-services-title{
+    font-size:44px;
+  }
+
+  .ajf-service-card{
+    padding:100px 20px 30px;
+  }
+
+  .ajf-service-content p{
+    opacity:0;
+    max-height:0;
+  }
+
+  .ajf-service-card.active p{
+    opacity:1;
+    max-height:200px;
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.ajf-service-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    if(window.innerWidth <= 768){
+      card.classList.toggle('active');
     }
-
-    const serviceCards = document.querySelectorAll('.ajf-service-card');
-
-    function handleServiceAccordion() {
-      const isMobileOrTablet = window.innerWidth <= 1024;
-
-      if (!isMobileOrTablet) {
-        serviceCards.forEach(card => card.classList.remove('is-open'));
-        return;
-      }
-
-      serviceCards.forEach(card => {
-        if (!card.dataset.bound) {
-          card.dataset.bound = 'true';
-
-          card.addEventListener('click', function () {
-            const isOpen = this.classList.contains('is-open');
-
-            serviceCards.forEach(item => item.classList.remove('is-open'));
-
-            if (!isOpen) {
-              this.classList.add('is-open');
-            }
-          });
-        }
-      });
-    }
-
-    handleServiceAccordion();
-    window.addEventListener('resize', handleServiceAccordion);
-  </script>
-</body>
-</html>
+  });
+});
+</script>
