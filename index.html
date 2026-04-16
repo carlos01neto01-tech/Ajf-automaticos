@@ -1743,16 +1743,15 @@
       </div>
     </section>
 
- <section class="ajf-services-sec" id="servicos">
+<section class="ajf-services-sec" id="servicos">
+
   <div class="ajf-services-bg">
-    <picture>
-      <source media="(max-width: 767px)" srcset="assets/PARTE SERVIÇOS MOBILE.webp">
-      <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="Ambiente interno da oficina AJF">
-    </picture>
+    <img src="assets/PARTE SERVIÇOS DESKTOP.webp" alt="">
     <div class="ajf-services-overlay"></div>
   </div>
 
   <div class="ajf-services-wrap">
+
     <div class="ajf-services-top">
       <h2 class="ajf-services-title">
         NOSSOS <span>SERVIÇOS</span>
@@ -1760,8 +1759,9 @@
     </div>
 
     <div class="ajf-services-grid">
-      
-      <article class="ajf-service-card">
+
+      <!-- CARD 1 -->
+      <div class="ajf-service-card">
         <div class="ajf-service-thumb">
           <img src="assets/TROCA DE OLHO.webp">
         </div>
@@ -1776,9 +1776,10 @@
             realizada de forma correta, sem riscos para o sistema.
           </p>
         </div>
-      </article>
+      </div>
 
-      <article class="ajf-service-card">
+      <!-- CARD 2 -->
+      <div class="ajf-service-card">
         <div class="ajf-service-thumb">
           <img src="assets/MODULOS ELETRONICOS.webp">
         </div>
@@ -1792,9 +1793,10 @@
             desmontagem, análise e substituição de componentes defeituosos.
           </p>
         </div>
-      </article>
+      </div>
 
-      <article class="ajf-service-card">
+      <!-- CARD 3 -->
+      <div class="ajf-service-card">
         <div class="ajf-service-thumb">
           <img src="assets/DESEMPENHO.webp">
         </div>
@@ -1808,54 +1810,56 @@
             garantimos que tudo esteja funcionando antes da entrega.
           </p>
         </div>
-      </article>
+      </div>
 
     </div>
   </div>
 </section>
 
 <style>
-/* ================= SERVIÇOS ================= */
 
+/* FUNDO */
 .ajf-services-sec{
   position:relative;
   width:100%;
-  background:#000;
+  overflow:hidden;
 }
 
-.ajf-services-bg,
-.ajf-services-bg img,
-.ajf-services-overlay{
+.ajf-services-bg{
   position:absolute;
   inset:0;
-  width:100%;
-  height:100%;
 }
 
 .ajf-services-bg img{
+  width:100%;
+  height:100%;
   object-fit:cover;
 }
 
 .ajf-services-overlay{
-  background:rgba(0,0,0,.7);
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.75);
 }
 
+/* CONTEÚDO */
 .ajf-services-wrap{
   position:relative;
   z-index:2;
   width:90%;
-  max-width:1400px;
+  max-width:1300px;
   margin:auto;
   padding:120px 0;
 }
 
+/* TÍTULO */
 .ajf-services-top{
   text-align:center;
-  margin-bottom:120px; /* RESPIRO AJUSTADO */
+  margin-bottom:100px;
 }
 
 .ajf-services-title{
-  font-size:64px;
+  font-size:60px;
   color:#fff;
 }
 
@@ -1863,18 +1867,24 @@
   color:#19f000;
 }
 
+/* GRID */
 .ajf-services-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
+  gap:30px;
 }
 
+/* CARD */
 .ajf-service-card{
   position:relative;
-  padding:120px 30px 40px;
+  height:320px;
+  padding:90px 25px 35px;
   border:2px solid #19f000;
-  border-radius:30px;
+  border-radius:26px;
   text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   transition:.3s;
   cursor:pointer;
 }
@@ -1884,15 +1894,16 @@
   box-shadow:0 0 30px #19f000;
 }
 
+/* IMAGEM */
 .ajf-service-thumb{
   position:absolute;
-  top:-60px;
+  top:-45px;
   left:50%;
   transform:translateX(-50%);
-  width:150px;
-  height:150px;
+  width:110px;
+  height:110px;
   border:2px solid #19f000;
-  border-radius:25px;
+  border-radius:20px;
   overflow:hidden;
 }
 
@@ -1902,22 +1913,25 @@
   object-fit:cover;
 }
 
+/* TEXTO */
 .ajf-service-content{
-  margin-top:60px;
+  margin-top:20px;
 }
 
 .ajf-service-content h3{
-  font-size:32px;
+  font-size:24px;
   color:#fff;
+  line-height:1.3;
 }
 
 .green{
   color:#19f000;
 }
 
+/* DESCRIÇÃO */
 .ajf-service-content p{
-  margin-top:25px;
-  font-size:20px;
+  margin-top:15px;
+  font-size:16px;
   opacity:0;
   max-height:0;
   overflow:hidden;
@@ -1926,7 +1940,7 @@
 
 .ajf-service-card:hover p{
   opacity:1;
-  max-height:200px;
+  max-height:120px;
 }
 
 /* MOBILE */
@@ -1934,15 +1948,26 @@
 
   .ajf-services-grid{
     grid-template-columns:1fr;
-    gap:80px;
+    gap:60px;
   }
 
   .ajf-services-title{
-    font-size:44px;
+    font-size:40px;
   }
 
   .ajf-service-card{
-    padding:100px 20px 30px;
+    height:auto;
+    padding:80px 20px 25px;
+  }
+
+  .ajf-service-thumb{
+    width:90px;
+    height:90px;
+    top:-40px;
+  }
+
+  .ajf-service-content h3{
+    font-size:20px;
   }
 
   .ajf-service-content p{
@@ -1952,9 +1977,10 @@
 
   .ajf-service-card.active p{
     opacity:1;
-    max-height:200px;
+    max-height:150px;
   }
 }
+
 </style>
 
 <script>
