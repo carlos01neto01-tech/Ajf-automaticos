@@ -1737,10 +1737,10 @@
     </div>
 
     <div class="ajf-form-right">
-      <form class="ajf-form-box">
-        <input type="text" name="nome" placeholder="Nome:" required>
-        <input type="email" name="email" placeholder="Email:" required>
-        <input type="tel" name="telefone" placeholder="Telefone:" required>
+      <form class="ajf-form-box" id="ajfWhatsForm">
+        <input type="text" name="nome" id="ajfNome" placeholder="Nome:" required>
+        <input type="email" name="email" id="ajfEmail" placeholder="Email:" required>
+        <input type="tel" name="telefone" id="ajfTelefone" placeholder="Telefone:" required>
 
         <button type="submit">ENVIAR FORMULÁRIO</button>
       </form>
@@ -1761,7 +1761,7 @@
   width:min(calc(100% - 120px), 1320px);
   margin:0 auto;
   display:grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns:1fr 1.15fr;
   gap:80px;
   align-items:center;
 }
@@ -1854,7 +1854,7 @@
 }
 
 /* TABLET */
-@media (max-width: 1024px){
+@media (max-width:1024px){
   .ajf-form-sec{
     padding:70px 0 90px;
   }
@@ -1900,7 +1900,7 @@
 }
 
 /* MOBILE */
-@media (max-width: 767px){
+@media (max-width:767px){
   .ajf-form-sec{
     padding:54px 0 72px;
     border-top:3px solid #52ff3f;
@@ -1950,7 +1950,7 @@
 }
 
 /* MOBILE PEQUENO */
-@media (max-width: 430px){
+@media (max-width:430px){
   .ajf-form-wrap{
     width:calc(100% - 24px);
   }
@@ -1980,3 +1980,25 @@
   }
 }
 </style>
+
+<script>
+document.getElementById('ajfWhatsForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const nome = document.getElementById('ajfNome').value.trim();
+  const email = document.getElementById('ajfEmail').value.trim();
+  const telefone = document.getElementById('ajfTelefone').value.trim();
+
+  const numeroWhatsapp = '5544999999999'; // TROQUE AQUI PELO NÚMERO CERTO
+
+  const mensagem =
+    'Olá, vim pelo site da AJF.%0A%0A' +
+    '*Nome:* ' + encodeURIComponent(nome) + '%0A' +
+    '*Email:* ' + encodeURIComponent(email) + '%0A' +
+    '*Telefone:* ' + encodeURIComponent(telefone);
+
+  const link = 'https://wa.me/' + numeroWhatsapp + '?text=' + mensagem;
+
+  window.open(link, '_blank');
+});
+</script>
