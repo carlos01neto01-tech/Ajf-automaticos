@@ -1137,42 +1137,41 @@
       font-family:Arial, Helvetica, sans-serif;
     }
 
-    /* BOTÃO FLUTUANTE AJUSTADO */
+    /* BOTÃO FLUTUANTE */
     .ajf-float-whatsapp{
       position:fixed;
-      right:24px;
-      bottom:24px;
-      z-index:1200;
+      right:20px;
+      bottom:20px;
+      z-index:9999;
+      width:84px;
+      height:84px;
       border:none;
-      background:#ececec;
-      border-radius:999px;
-      padding:12px 22px 12px 12px;
+      background:transparent;
+      padding:0;
+      cursor:pointer;
       display:flex;
       align-items:center;
-      gap:18px;
-      cursor:pointer;
-      box-shadow:0 18px 38px rgba(0,0,0,.24);
-      transition:transform .2s ease, box-shadow .2s ease;
+      justify-content:center;
+      transition:transform .2s ease;
     }
 
     .ajf-float-whatsapp:hover{
-      transform:translateY(-2px);
-      box-shadow:0 22px 42px rgba(0,0,0,.28);
+      transform:scale(1.06);
     }
 
     .ajf-float-whatsapp:active{
-      transform:scale(.98);
+      transform:scale(.96);
     }
 
     .ajf-float-icon{
-      width:122px;
-      height:122px;
-      flex:0 0 122px;
+      width:84px;
+      height:84px;
       border-radius:50%;
       overflow:hidden;
       display:flex;
       align-items:center;
       justify-content:center;
+      filter:drop-shadow(0 10px 20px rgba(0,0,0,.28));
     }
 
     .ajf-float-icon img{
@@ -1180,16 +1179,6 @@
       height:100%;
       object-fit:contain;
       display:block;
-    }
-
-    .ajf-float-label{
-      color:#000;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:clamp(28px, 2.4vw, 38px);
-      line-height:1.02;
-      font-weight:800;
-      text-align:left;
-      white-space:nowrap;
     }
 
     .ajf-popup-overlay{
@@ -1380,16 +1369,6 @@
 
       .ajf2-card{
         min-height:430px;
-      }
-
-      .ajf-float-icon{
-        width:108px;
-        height:108px;
-        flex-basis:108px;
-      }
-
-      .ajf-float-label{
-        font-size:clamp(24px, 2vw, 34px);
       }
     }
 
@@ -1736,23 +1715,6 @@
         padding:22px;
         grid-template-columns:1fr;
       }
-
-      .ajf-float-whatsapp{
-        right:18px;
-        bottom:18px;
-        padding:10px 18px 10px 10px;
-        gap:14px;
-      }
-
-      .ajf-float-icon{
-        width:92px;
-        height:92px;
-        flex-basis:92px;
-      }
-
-      .ajf-float-label{
-        font-size:24px;
-      }
     }
 
     @media (max-width: 767px){
@@ -1997,23 +1959,15 @@
       }
 
       .ajf-float-whatsapp{
-        right:10px;
-        bottom:10px;
-        padding:8px 12px 8px 8px;
-        gap:10px;
+        width:68px;
+        height:68px;
+        right:14px;
+        bottom:14px;
       }
 
       .ajf-float-icon{
-        width:64px;
-        height:64px;
-        flex-basis:64px;
-      }
-
-      .ajf-float-label{
-        font-size:16px;
-        white-space:normal;
-        max-width:120px;
-        line-height:1.05;
+        width:68px;
+        height:68px;
       }
 
       .ajf-popup{
@@ -2135,6 +2089,18 @@
       .ajf-form-box button{
         height:78px;
       }
+
+      .ajf-float-whatsapp{
+        width:62px;
+        height:62px;
+        right:12px;
+        bottom:12px;
+      }
+
+      .ajf-float-icon{
+        width:62px;
+        height:62px;
+      }
     }
 
     @media (max-width: 390px){
@@ -2146,17 +2112,6 @@
 
       .ajf2-ticker-track span{
         font-size:13px;
-      }
-
-      .ajf-float-label{
-        font-size:14px;
-        max-width:104px;
-      }
-
-      .ajf-float-icon{
-        width:58px;
-        height:58px;
-        flex-basis:58px;
       }
     }
   </style>
@@ -2182,7 +2137,7 @@
           aria-label="Entrar em contato pelo WhatsApp"
         >
           <span>Entrar em Contato</span>
-          <img src="assets/ICON WHATSAPP(1).webp" alt="WhatsApp" class="whatsapp-icon" />
+          <img src="assets/ICON WHATSAPP(2).webp" alt="WhatsApp" class="whatsapp-icon" />
         </a>
 
         <button
@@ -2539,9 +2494,8 @@
   <!-- BOTÃO FLUTUANTE -->
   <button class="ajf-float-whatsapp" id="ajfFloatWhatsapp" aria-label="Abrir popup de problemas no WhatsApp" type="button">
     <span class="ajf-float-icon">
-      <img src="assets/BOTAO WHATSAPP(1).webp" alt="WhatsApp flutuante">
+      <img src="assets/ICON WHATSAPP(2).webp" alt="WhatsApp flutuante">
     </span>
-    <span class="ajf-float-label">Qual seu problema atual?</span>
   </button>
 
   <!-- POPUP -->
@@ -2550,7 +2504,7 @@
   <div class="ajf-popup" id="ajfPopup" role="dialog" aria-modal="true" aria-labelledby="ajfPopupTitle">
     <div class="ajf-popup-header">
       <div class="ajf-popup-badge">
-        <img src="assets/BOTAO WHATSAPP.webp" alt="WhatsApp">
+        <img src="assets/ICON WHATSAPP(2).webp" alt="WhatsApp">
       </div>
 
       <h2 class="ajf-popup-title" id="ajfPopupTitle">Qual seu problema atual?</h2>
